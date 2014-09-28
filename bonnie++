@@ -1,3 +1,39 @@
+# ZFS RAID Server
 #
+# sudo -u nobody bonnie++ -m "raidz2 L2ARC/80GB" -r 8192 -s 81920 -d /mnt/tank/tmp/ -f -b -n 1 >> /mnt/tank/tmp/bonnie.out
 #
+
+# Mac OS X 10.9.5 external USB 3 4TB ?? RPM disk
 #
+# couldn't get it to work "Large File Support not present, can't do 81920M"
+#
+# for I in $(seq 0 8); do /usr/local/sbin/bonnie++ -m "OSX_4TB_USB3" -r 8192 -s 81920 -d /Volumes/Big\ Disk/tmp/ -f -b -n 1; done
+
+# Ops Manager (Ubuntu 12.04.4 LTS x86_64)
+# running under ESXi 5.5
+# running under VMware Fusion 7.0
+# running under OS X 10.9.5
+# on an external USB3 4TB disk
+#
+# for I in $(seq 0 8); do bonnie++ -m "UBU_1204_ESXI_FUSION_OSX_USB3_4TB" -r 8192 -s 81920 -d /tmp/ -f -b -n 1; sleep 60; done
+Writing intelligently...done
+Rewriting...done
+Reading intelligently...done
+start 'em...done...done...done...done...done...
+Create files in sequential order...done.
+Stat files in sequential order...done.
+Delete files in sequential order...done.
+Create files in random order...done.
+Stat files in random order...done.
+Delete files in random order...done.
+Version  1.96       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+UBU_1204_ESXI_F 80G           51890  13 38489  16           145300  31 114.2 488
+Latency                        1801ms    5452ms             94299us     587ms
+Version  1.96       ------Sequential Create------ --------Random Create--------
+UBU_1204_ESXI_FUSIO -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1   399   4 +++++ +++   243   0   166   0 +++++ +++   317   0
+Latency               131ms      47us   43357us   65212us      10us   68158us
+1.96,1.96,UBU_1204_ESXI_FUSION_OSX_USB3_4TB,1,1411922881,80G,,,,51890,13,38489,16,,,145300,31,114.2,488,1,,,,,399,4,+++++,+++,243,0,166,0,+++++,+++,317,0,,1801ms,5452ms,,94299us,587ms,131ms,47us,43357us,65212us,10us,68158us
