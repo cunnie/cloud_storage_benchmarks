@@ -37,3 +37,194 @@ UBU_1204_ESXI_FUSIO -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
                   1   399   4 +++++ +++   243   0   166   0 +++++ +++   317   0
 Latency               131ms      47us   43357us   65212us      10us   68158us
 1.96,1.96,UBU_1204_ESXI_FUSION_OSX_USB3_4TB,1,1411922881,80G,,,,51890,13,38489,16,,,145300,31,114.2,488,1,,,,,399,4,+++++,+++,243,0,166,0,+++++,+++,317,0,,1801ms,5452ms,,94299us,587ms,131ms,47us,43357us,65212us,10us,68158us
+
+tempest@tempest:~$ for I in $(seq 0 8); do bonnie++ -m "UBU_1204_ESXI_FUSION_OSX_USB3_4TB" -r 8192 -s 81920 -d /tmp/ -f -b -n 1; sleep 60; done
+Writing intelligently...done
+Rewriting...done
+Reading intelligently...done
+start 'em...done...done...done...done...done...
+Create files in sequential order...done.
+Stat files in sequential order...done.
+Delete files in sequential order...done.
+Create files in random order...done.
+Stat files in random order...done.
+Delete files in random order...done.
+Version  1.96       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+UBU_1204_ESXI_F 80G           28503  12 32134  16           159847  32 130.7 474
+Latency                        2114ms     761ms               372ms     482ms
+Version  1.96       ------Sequential Create------ --------Random Create--------
+UBU_1204_ESXI_FUSIO -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1   536   7 +++++ +++   226   0   253   0 +++++ +++   186   0
+Latency             45979us      37us   58193us   42552us      18us   96600us
+1.96,1.96,UBU_1204_ESXI_FUSION_OSX_USB3_4TB,1,1412199088,80G,,,,28503,12,32134,16,,,159847,32,130.7,474,1,,,,,536,7,+++++,+++,226,0,253,0,+++++,+++,186,0,,2114ms,761ms,,372ms,482ms,45979us,37us,58193us,42552us,18us,96600us
+Writing intelligently...done
+Rewriting...done
+Reading intelligently...done
+start 'em...done...done...done...done...done...
+Create files in sequential order...done.
+Stat files in sequential order...done.
+Delete files in sequential order...done.
+Create files in random order...done.
+Stat files in random order...done.
+Delete files in random order...done.
+Version  1.96       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+UBU_1204_ESXI_F 80G           34561  14 41850  17           247294  43 129.7 491
+Latency                        2714ms     668ms             88572us     499ms
+Version  1.96       ------Sequential Create------ --------Random Create--------
+UBU_1204_ESXI_FUSIO -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1   243   5 +++++ +++   227   0   166   0 +++++ +++   166   0
+Latency               171ms      46us   51573us   61035us      34us   90338us
+1.96,1.96,UBU_1204_ESXI_FUSION_OSX_USB3_4TB,1,1412205118,80G,,,,34561,14,41850,17,,,247294,43,129.7,491,1,,,,,243,5,+++++,+++,227,0,166,0,+++++,+++,166,0,,2714ms,668ms,,88572us,499ms,171ms,46us,51573us,61035us,34us,90338us
+Writing intelligently...done
+Rewriting...done
+Reading intelligently...done
+start 'em...done...done...done...done...done...
+Create files in sequential order...done.
+Stat files in sequential order...done.
+Delete files in sequential order...done.
+Create files in random order...done.
+Stat files in random order...done.
+Delete files in random order...done.
+Version  1.96       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+UBU_1204_ESXI_F 80G           33382  14 38650  16           149997  30 122.0 488
+Latency                        2290ms     851ms               269ms     519ms
+Version  1.96       ------Sequential Create------ --------Random Create--------
+UBU_1204_ESXI_FUSIO -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1   236   3 +++++ +++   159   0   134   0 +++++ +++   614   1
+Latency              1246ms      36us   68030us     119ms      13us   16251us
+1.96,1.96,UBU_1204_ESXI_FUSION_OSX_USB3_4TB,1,1412208917,80G,,,,33382,14,38650,16,,,149997,30,122.0,488,1,,,,,236,3,+++++,+++,159,0,134,0,+++++,+++,614,1,,2290ms,851ms,,269ms,519ms,1246ms,36us,68030us,119ms,13us,16251us
+Writing intelligently...done
+Rewriting...done
+Reading intelligently...done
+start 'em...done...done...done...done...done...
+Create files in sequential order...done.
+Stat files in sequential order...done.
+Delete files in sequential order...done.
+Create files in random order...done.
+Stat files in random order...done.
+Delete files in random order...done.
+Version  1.96       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+UBU_1204_ESXI_F 80G           31145  13 34885  16           204829  37 105.8 488
+Latency                        1977ms     849ms               111ms     543ms
+Version  1.96       ------Sequential Create------ --------Random Create--------
+UBU_1204_ESXI_FUSIO -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1   169   2 +++++ +++   174   0   372   1 +++++ +++   242   0
+Latency               251ms      41us     106ms   38953us       5us   47371us
+1.96,1.96,UBU_1204_ESXI_FUSION_OSX_USB3_4TB,1,1412215347,80G,,,,31145,13,34885,16,,,204829,37,105.8,488,1,,,,,169,2,+++++,+++,174,0,372,1,+++++,+++,242,0,,1977ms,849ms,,111ms,543ms,251ms,41us,106ms,38953us,5us,47371us
+Writing intelligently...done
+Rewriting...done
+Reading intelligently...done
+start 'em...done...done...done...done...done...
+Create files in sequential order...done.
+Stat files in sequential order...done.
+Delete files in sequential order...done.
+Create files in random order...done.
+Stat files in random order...done.
+Delete files in random order...done.
+Version  1.96       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+UBU_1204_ESXI_F 80G           36313  14 44201  17           211944  39 106.3 491
+Latency                        1954ms     785ms             90212us     450ms
+Version  1.96       ------Sequential Create------ --------Random Create--------
+UBU_1204_ESXI_FUSIO -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1   138   2 +++++ +++   335   0   200   0 +++++ +++   281   0
+Latency               197ms      72us   48446us   47783us      15us   60718us
+1.96,1.96,UBU_1204_ESXI_FUSION_OSX_USB3_4TB,1,1412222454,80G,,,,36313,14,44201,17,,,211944,39,106.3,491,1,,,,,138,2,+++++,+++,335,0,200,0,+++++,+++,281,0,,1954ms,785ms,,90212us,450ms,197ms,72us,48446us,47783us,15us,60718us
+Writing intelligently...done
+Rewriting...done
+Reading intelligently...done
+start 'em...done...done...done...done...done...
+Create files in sequential order...done.
+Stat files in sequential order...done.
+Delete files in sequential order...done.
+Create files in random order...done.
+Stat files in random order...done.
+Delete files in random order...done.
+Version  1.96       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+UBU_1204_ESXI_F 80G           30706  14 33431  15           156299  32 132.0 480
+Latency                        2478ms    3827ms               296ms     359ms
+Version  1.96       ------Sequential Create------ --------Random Create--------
+UBU_1204_ESXI_FUSIO -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1   313   5 +++++ +++   217   0   310   0 +++++ +++   142   0
+Latency             78015us      36us   44188us   46352us      18us     124ms
+1.96,1.96,UBU_1204_ESXI_FUSION_OSX_USB3_4TB,1,1412225721,80G,,,,30706,14,33431,15,,,156299,32,132.0,480,1,,,,,313,5,+++++,+++,217,0,310,0,+++++,+++,142,0,,2478ms,3827ms,,296ms,359ms,78015us,36us,44188us,46352us,18us,124ms
+Writing intelligently...done
+Rewriting...done
+Reading intelligently...done
+start 'em...done...done...done...done...done...
+Create files in sequential order...done.
+Stat files in sequential order...done.
+Delete files in sequential order...done.
+Create files in random order...done.
+Stat files in random order...done.
+Delete files in random order...done.
+Version  1.96       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+UBU_1204_ESXI_F 80G           33607  13 39875  17           245639  43 132.2 490
+Latency                        3021ms     817ms             95793us     530ms
+Version  1.96       ------Sequential Create------ --------Random Create--------
+UBU_1204_ESXI_FUSIO -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1   305   2 +++++ +++   213   0   238   0 +++++ +++   111   0
+Latency               659ms      36us   42127us     101ms      11us     157ms
+1.96,1.96,UBU_1204_ESXI_FUSION_OSX_USB3_4TB,1,1412232056,80G,,,,33607,13,39875,17,,,245639,43,132.2,490,1,,,,,305,2,+++++,+++,213,0,238,0,+++++,+++,111,0,,3021ms,817ms,,95793us,530ms,659ms,36us,42127us,101ms,11us,157ms
+Writing intelligently...done
+Rewriting...done
+Reading intelligently...done
+start 'em...done...done...done...done...done...
+Create files in sequential order...done.
+Stat files in sequential order...done.
+Delete files in sequential order...done.
+Create files in random order...done.
+Stat files in random order...done.
+Delete files in random order...done.
+Version  1.96       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+UBU_1204_ESXI_F 80G           34299  14 39649  16           150626  30 121.8 489
+Latency                        2720ms     833ms               110ms     704ms
+Version  1.96       ------Sequential Create------ --------Random Create--------
+UBU_1204_ESXI_FUSIO -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1   169   2 +++++ +++   242   0   137   0 +++++ +++   723   1
+Latency              1196ms     118us   50434us     108ms       4us   17181us
+1.96,1.96,UBU_1204_ESXI_FUSION_OSX_USB3_4TB,1,1412239169,80G,,,,34299,14,39649,16,,,150626,30,121.8,489,1,,,,,169,2,+++++,+++,242,0,137,0,+++++,+++,723,1,,2720ms,833ms,,110ms,704ms,1196ms,118us,50434us,108ms,4us,17181us
+Writing intelligently...done
+Rewriting...done
+Reading intelligently...done
+start 'em...done...done...done...done...done...
+Create files in sequential order...done.
+Stat files in sequential order...done.
+Delete files in sequential order...done.
+Create files in random order...done.
+Stat files in random order...done.
+Delete files in random order...done.
+Version  1.96       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+UBU_1204_ESXI_F 80G           29975  13 33498  16           182916  35 105.0 478
+Latency                        2954ms     794ms               387ms     565ms
+Version  1.96       ------Sequential Create------ --------Random Create--------
+UBU_1204_ESXI_FUSIO -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1   499   6 +++++ +++   178   0   273   0 +++++ +++   238   0
+Latency             70571us      41us   66694us   85907us      22us   80991us
+1.96,1.96,UBU_1204_ESXI_FUSION_OSX_USB3_4TB,1,1412242121,80G,,,,29975,13,33498,16,,,182916,35,105.0,478,1,,,,,499,6,+++++,+++,178,0,273,0,+++++,+++,238,0,,2954ms,794ms,,387ms,565ms,70571us,41us,66694us,85907us,22us,80991us
