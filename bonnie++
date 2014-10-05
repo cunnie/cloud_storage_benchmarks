@@ -1,3 +1,41 @@
+# ZFS Results for the blog post "A High-performing Mid-range NAS Server"
+# ( w=304MB/s , rw=186MB/s , r=304MB/s )
+
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+raidz2_no_l2arc 80G           301951  96 186590  85           629601  94 479.0  31
+Latency                       10390us     317ms             74081us     198ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+raidz2_no_l2arc_no_ -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               734us     162us     695us     144us      56us     674us
+1.97,1.97,raidz2_no_l2arc_no_slog,1,1412549092,80G,,,,301951,96,186590,85,,,629601,94,479.0,31,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,10390us,317ms,,74081us,198ms,734us,162us,695us,144us,56us,674us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+raidz2_no_l2arc 80G           304630  96 187881  86           622407  95 509.0  19
+Latency                       19569us     294ms               120ms     198ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+raidz2_no_l2arc_no_ -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               705us     565us     231us     156us     560us     118us
+1.97,1.97,raidz2_no_l2arc_no_slog,1,1412550080,80G,,,,304630,96,187881,86,,,622407,95,509.0,19,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,19569us,294ms,,120ms,198ms,705us,565us,231us,156us,560us,118us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+raidz2_no_l2arc 80G           304658  96 186303  85           636943  95 497.4  19
+Latency                        6588us     409ms               103ms     139ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+raidz2_no_l2arc_no_ -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               679us     159us     658us     638us      52us     628us
+1.97,1.97,raidz2_no_l2arc_no_slog,1,1412547167,80G,,,,304658,96,186303,85,,,636943,95,497.4,19,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,6588us,409ms,,103ms,139ms,679us,159us,658us,638us,52us,628us
+
+
 # ZFS RAID Server
 #
 # sudo -u nobody bonnie++ -m "raidz2 L2ARC/80GB" -r 8192 -s 81920 -d /mnt/tank/tmp/ -f -b -n 1 >> /mnt/tank/tmp/bonnie.out
