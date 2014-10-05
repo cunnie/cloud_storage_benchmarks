@@ -1,5 +1,5 @@
 # ZFS Results for the blog post "A High-performing Mid-range NAS Server"
-# ( w=304MB/s , rw=186MB/s , r=304MB/s )
+# ( w=304MB/s , rw=186MB/s , r=304MB/s ) IOPS=497
 
 Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
 Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
