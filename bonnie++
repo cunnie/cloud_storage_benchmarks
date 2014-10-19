@@ -266,3 +266,11 @@ UBU_1204_ESXI_FUSIO -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
                   1   499   6 +++++ +++   178   0   273   0 +++++ +++   238   0
 Latency             70571us      41us   66694us   85907us      22us   80991us
 1.96,1.96,UBU_1204_ESXI_FUSION_OSX_USB3_4TB,1,1412242121,80G,,,,29975,13,33498,16,,,182916,35,105.0,478,1,,,,,499,6,+++++,+++,178,0,273,0,+++++,+++,238,0,,2954ms,794ms,,387ms,565ms,70571us,41us,66694us,85907us,22us,80991us
+
+# Ops Manager (Ubuntu 12.04.4 LTS x86_64)
+# running under ESXi 5.5
+# running under VMware Fusion 7.0
+# running under OS X 10.10
+# on an iSCSI-based FreeNAS server
+#
+# for I in $(seq 0 8); do bonnie++ -m "UBU_1204_ESXI_FUSION_OSX_iSCSI" -r 8192 -s 81920 -d /tmp/ -f -b -n 1 > ~/bonnie.out; sleep 60; done
