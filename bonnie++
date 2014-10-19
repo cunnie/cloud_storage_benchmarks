@@ -1,6 +1,9 @@
 # ZFS Results for the blog post "A High-performing Mid-range NAS Server"
 # ( w=304MB/s , rw=186MB/s , r=304MB/s ) IOPS=497
 
+# ZFS Results for UBU_1204_ESXI_FUSION_OSX_USB3_4TB, 9 runs, median value
+# w: 33MB/s  r: 159MB/s IOPS: 121.8
+
 Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
 Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
 Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
