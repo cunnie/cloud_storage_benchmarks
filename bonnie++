@@ -276,4 +276,4 @@ Latency             70571us      41us   66694us   85907us      22us   80991us
 # running under OS X 10.10
 # on an iSCSI-based FreeNAS server
 #
-# for I in $(seq 0 8); do bonnie++ -m "UBU_1204_ESXI_FUSION_OSX_iSCSI" -r 8192 -s 81920 -d /tmp/ -f -b -n 1 > ~/bonnie.out; sleep 60; done
+# for I in $(seq 0 8); do bonnie++ -m "UBU_1204_ESXI_FUSION_OSX_iSCSI" -r 8192 -s 81920 -d /tmp/ -f -b -n 1 >> ~/bonnie.out; sleep 60; done
