@@ -2,7 +2,14 @@
 # ( w=304MB/s , rw=186MB/s , r=304MB/s ) IOPS=497
 
 # ZFS Results for UBU_1204_ESXI_FUSION_OSX_USB3_4TB, 9 runs, median value
-# w: 33MB/s  r: 159MB/s IOPS: 121.8
+# w: 33MB/s  r: 159MB/s IOPS:  121.8
+
+# ZFS Results for UBU_1204_ESXI_FUSION_OSX_iSCSI, 9 runs, median value
+# no L2ARC, no SLOG
+# w: 59MB/s  r: 74MB/s  IOPS:  99.8
+
+
+# typical command to parse bonnie++ output `./bonnie++_to_readable.rb < /tmp/bonnie.txt  | sort -n -k 2`
 
 Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
 Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
@@ -277,3 +284,104 @@ Latency             70571us      41us   66694us   85907us      22us   80991us
 # on an iSCSI-based FreeNAS server
 #
 # for I in $(seq 0 8); do bonnie++ -m "UBU_1204_ESXI_FUSION_OSX_iSCSI" -r 8192 -s 81920 -d /tmp/ -f -b -n 1 >> ~/bonnie.out; sleep 60; done
+
+Version  1.96       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+UBU_1204_ESXI_F 80G           65824   9 35912   6           74732   6  96.3   4
+Latency                        1859ms    1388ms               277ms     381ms
+Version  1.96       ------Sequential Create------ --------Random Create--------
+UBU_1204_ESXI_FUSIO -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1   502   2 +++++ +++   497   1   382   1 +++++ +++    78   0
+Latency             98738us      68us   57538us   37065us      58us     148ms
+1.96,1.96,UBU_1204_ESXI_FUSION_OSX_iSCSI,1,1413776367,80G,,,,65824,9,35912,6,,,74732,6,96.3,4,1,,,,,502,2,+++++,+++,497,1,382,1,+++++,+++,78,0,,1859ms,1388ms,,277ms,381ms,98738us,68us,57538us,37065us,58us,148ms
+Version  1.96       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+UBU_1204_ESXI_F 80G           61280   8 36021   6           74280   6  98.2   4
+Latency                        3274ms    1136ms               299ms     402ms
+Version  1.96       ------Sequential Create------ --------Random Create--------
+UBU_1204_ESXI_FUSIO -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1   564   2 +++++ +++   468   1   598   1 +++++ +++   120   0
+Latency               123ms      39us   69103us   12601us      36us     100ms
+1.96,1.96,UBU_1204_ESXI_FUSION_OSX_iSCSI,1,1413836812,80G,,,,61280,8,36021,6,,,74280,6,98.2,4,1,,,,,564,2,+++++,+++,468,1,598,1,+++++,+++,120,0,,3274ms,1136ms,,299ms,402ms,123ms,39us,69103us,12601us,36us,100ms
+Version  1.96       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+UBU_1204_ESXI_F 80G           59763   8 36217   6           74380   6  95.2   4
+Latency                        2127ms    1087ms               262ms     448ms
+Version  1.96       ------Sequential Create------ --------Random Create--------
+UBU_1204_ESXI_FUSIO -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1   549   2 +++++ +++   475   1   575   1 +++++ +++   125   0
+Latency             49192us      35us   76066us   13578us      10us     150ms
+1.96,1.96,UBU_1204_ESXI_FUSION_OSX_iSCSI,1,1413831832,80G,,,,59763,8,36217,6,,,74380,6,95.2,4,1,,,,,549,2,+++++,+++,475,1,575,1,+++++,+++,125,0,,2127ms,1087ms,,262ms,448ms,49192us,35us,76066us,13578us,10us,150ms
+Version  1.96       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+UBU_1204_ESXI_F 80G           60768   8 36012   6           74758   6  98.4   4
+Latency                        5177ms    1188ms               306ms     362ms
+Version  1.96       ------Sequential Create------ --------Random Create--------
+UBU_1204_ESXI_FUSIO -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1   479   2 +++++ +++   554   1   501   1 +++++ +++   141   0
+Latency             65803us      43us   12568us   66201us      34us   86801us
+1.96,1.96,UBU_1204_ESXI_FUSION_OSX_iSCSI,1,1413826916,80G,,,,60768,8,36012,6,,,74758,6,98.4,4,1,,,,,479,2,+++++,+++,554,1,501,1,+++++,+++,141,0,,5177ms,1188ms,,306ms,362ms,65803us,43us,12568us,66201us,34us,86801us
+Version  1.96       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+UBU_1204_ESXI_F 80G           62584   9 35930   6           73610   6 101.3   4
+Latency                        2190ms    1243ms               449ms     329ms
+Version  1.96       ------Sequential Create------ --------Random Create--------
+UBU_1204_ESXI_FUSIO -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1   496   2 +++++ +++   476   1   581   1 +++++ +++   125   0
+Latency             50267us      36us   61399us   12812us       5us     162ms
+1.96,1.96,UBU_1204_ESXI_FUSION_OSX_iSCSI,1,1413821910,80G,,,,62584,9,35930,6,,,73610,6,101.3,4,1,,,,,496,2,+++++,+++,476,1,581,1,+++++,+++,125,0,,2190ms,1243ms,,449ms,329ms,50267us,36us,61399us,12812us,5us,162ms
+Version  1.96       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+UBU_1204_ESXI_F 80G           59538   8 36171   6           74449   6 101.6   4
+Latency                        2604ms    1185ms               310ms     343ms
+Version  1.96       ------Sequential Create------ --------Random Create--------
+UBU_1204_ESXI_FUSIO -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1   498   2 +++++ +++   499   1   583   2 +++++ +++   130   0
+Latency             38980us      45us   76159us    4283us      17us   82056us
+1.96,1.96,UBU_1204_ESXI_FUSION_OSX_iSCSI,1,1413816913,80G,,,,59538,8,36171,6,,,74449,6,101.6,4,1,,,,,498,2,+++++,+++,499,1,583,2,+++++,+++,130,0,,2604ms,1185ms,,310ms,343ms,38980us,45us,76159us,4283us,17us,82056us
+Version  1.96       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+UBU_1204_ESXI_F 80G           63778   9 35814   6           71568   7  99.8   5
+Latency                        1924ms    2295ms               313ms     542ms
+Version  1.96       ------Sequential Create------ --------Random Create--------
+UBU_1204_ESXI_FUSIO -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1   440   1 +++++ +++   453   1   571   1 +++++ +++   131   0
+Latency               119ms      83us     101ms    3772us      37us     154ms
+1.96,1.96,UBU_1204_ESXI_FUSION_OSX_iSCSI,1,1413836815,80G,,,,63778,9,35814,6,,,71568,7,99.8,5,1,,,,,440,1,+++++,+++,453,1,571,1,+++++,+++,131,0,,1924ms,2295ms,,313ms,542ms,119ms,83us,101ms,3772us,37us,154ms
+Version  1.96       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+UBU_1204_ESXI_F 80G           59023   9 34611   6           73071   7 100.6   5
+Latency                        2135ms    1299ms               297ms     313ms
+Version  1.96       ------Sequential Create------ --------Random Create--------
+UBU_1204_ESXI_FUSIO -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1   473   2 +++++ +++   526   1   513   2 +++++ +++   118   0
+Latency             56085us      86us   23295us   59781us      87us     110ms
+1.96,1.96,UBU_1204_ESXI_FUSION_OSX_iSCSI,1,1413842428,80G,,,,59023,9,34611,6,,,73071,7,100.6,5,1,,,,,473,2,+++++,+++,526,1,513,2,+++++,+++,118,0,,2135ms,1299ms,,297ms,313ms,56085us,86us,23295us,59781us,87us,110ms
+Version  1.96       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+UBU_1204_ESXI_F 80G           59770   9 35787   6           73270   6 105.2   5
+Latency                        4656ms    1082ms               278ms     357ms
+Version  1.96       ------Sequential Create------ --------Random Create--------
+UBU_1204_ESXI_FUSIO -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1   493   2 +++++ +++   518   1   522   1 +++++ +++   136   0
+Latency               136ms      36us   55494us   36157us       5us   99421us
+1.96,1.96,UBU_1204_ESXI_FUSION_OSX_iSCSI,1,1413847426,80G,,,,59770,9,35787,6,,,73270,6,105.2,5,1,,,,,493,2,+++++,+++,518,1,522,1,+++++,+++,136,0,,4656ms,1082ms,,278ms,357ms,136ms,36us,55494us,36157us,5us,99421us
+
