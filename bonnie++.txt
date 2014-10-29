@@ -1,7 +1,13 @@
 # quoted in the blog post "A High-performing Mid-range NAS Server"
+
 # ZFS Results for RAIDZ2, 3 runs, median value
 # no L2ARC, no SLOG, 80GB file
 # w: 304MB/s  r: 304MB/s IOPS: 497
+
+# Note: I modified the titles of the various bonnie++ runs (the
+# original titles I selected were both too long and not meaningful)
+# post-collection. I was careful not to delete any of the data, but
+# there is a chance I made a mistake.
 
 # ZFS Results for RAIDZ2, 9 runs, median value
 # L2ARC, no SLOG, 80GB file
@@ -47,6 +53,18 @@
 #
 # foreach I (0 1 2 3 4 5 6 7 8); sudo -u nobody bonnie++ -m "RAIDZ2" -r 8192 -s 81920 -d /mnt/tank/tmp/ -f -b -n 1 >> /mnt/tank/tmp/bonnie.txt; end
 #
+# tcsh doesn't allow ";" to replace new-lines, sigh.
+#
+foreach I (0 1 2 3 4 5 6 7 8)
+  ( sudo -u nobody bonnie++ -m "RAIDZ2_L2" -r 8192 -s 81920 -d /mnt/tank/tmp/ -f -b -n 1; date ) >> /mnt/tank/tmp/bonnie.txt &
+  ( sudo -u nobody bonnie++ -m "RAIDZ2_L2" -r 8192 -s 81920 -d /mnt/tank/tmp/ -f -b -n 1; date ) >> /mnt/tank/tmp/bonnie.txt &
+  ( sudo -u nobody bonnie++ -m "RAIDZ2_L2" -r 8192 -s 81920 -d /mnt/tank/tmp/ -f -b -n 1; date ) >> /mnt/tank/tmp/bonnie.txt &
+  ( sudo -u nobody bonnie++ -m "RAIDZ2_L2" -r 8192 -s 81920 -d /mnt/tank/tmp/ -f -b -n 1; date ) >> /mnt/tank/tmp/bonnie.txt &
+  wait
+  sleep 60
+end
+
+
 Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
 Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
 Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
