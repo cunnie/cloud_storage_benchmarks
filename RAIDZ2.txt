@@ -1,0 +1,892 @@
+# ZFS Results for RAIDZ2, 9 runs, median values
+# RAIDZ2, no L2ARC, no SLOG, 80GB file
+# 80GB file
+# w: 993MB/s  r: 1882MB/s IOPS:  884
+
+# ZFS RAID Server
+# RAIDZ2, no L2ARC, no SLOG, 80GB file
+# 9 series of runs, 8 jobs in parallel, median value
+#
+# tcsh doesn't allow ";" to replace new-lines, sigh.
+#
+# Kick off 8 jobs (8 cores) to minimize CPU-bottleneck
+foreach I (0 1 2 3 4 5 6 7 8)
+  ( sudo -u nobody bonnie++ -m "RAIDZ2_8C" -r 8192 -s 81920 -d /mnt/tank/tmp/ -f -b -n 1; date ) >> /mnt/tank/tmp/bonnie.txt &
+  ( sudo -u nobody bonnie++ -m "RAIDZ2_8C" -r 8192 -s 81920 -d /mnt/tank/tmp/ -f -b -n 1; date ) >> /mnt/tank/tmp/bonnie.txt &
+  ( sudo -u nobody bonnie++ -m "RAIDZ2_8C" -r 8192 -s 81920 -d /mnt/tank/tmp/ -f -b -n 1; date ) >> /mnt/tank/tmp/bonnie.txt &
+  ( sudo -u nobody bonnie++ -m "RAIDZ2_8C" -r 8192 -s 81920 -d /mnt/tank/tmp/ -f -b -n 1; date ) >> /mnt/tank/tmp/bonnie.txt &
+  ( sudo -u nobody bonnie++ -m "RAIDZ2_8C" -r 8192 -s 81920 -d /mnt/tank/tmp/ -f -b -n 1; date ) >> /mnt/tank/tmp/bonnie.txt &
+  ( sudo -u nobody bonnie++ -m "RAIDZ2_8C" -r 8192 -s 81920 -d /mnt/tank/tmp/ -f -b -n 1; date ) >> /mnt/tank/tmp/bonnie.txt &
+  ( sudo -u nobody bonnie++ -m "RAIDZ2_8C" -r 8192 -s 81920 -d /mnt/tank/tmp/ -f -b -n 1; date ) >> /mnt/tank/tmp/bonnie.txt &
+  ( sudo -u nobody bonnie++ -m "RAIDZ2_8C" -r 8192 -s 81920 -d /mnt/tank/tmp/ -f -b -n 1; date ) >> /mnt/tank/tmp/bonnie.txt &
+  wait
+  sleep 60
+end
+#
+# results are calculated by summing the 8 median values for a given metric
+# ~/bin/bonnie++_to_readable.rb < RAIDZ2.txt  | sort -n -k 2 | tail +32 | head -8
+
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           130295  71 82940  56           243235  55 122.7   6
+Latency                         241ms    4355ms               787ms     335ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency             30519us     189us     717us     184us      62us     730us
+1.97,1.97,RAIDZ2_8C,1,1414665145,80G,,,,130295,71,82940,56,,,243235,55,122.7,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,241ms,4355ms,,787ms,335ms,30519us,189us,717us,184us,62us,730us
+Thu Oct 30 08:40:38 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           129666  71 82850  56           245313  55 121.8   6
+Latency                         313ms    4042ms               546ms     378ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               658us     617us     234us     164us      55us     761us
+1.97,1.97,RAIDZ2_8C,1,1414665094,80G,,,,129666,71,82850,56,,,245313,55,121.8,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,313ms,4042ms,,546ms,378ms,658us,617us,234us,164us,55us,761us
+Thu Oct 30 08:40:39 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           129935  71 82900  56           244013  55 120.1   6
+Latency                         263ms    4301ms               691ms     401ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency              6891us     176us     764us     777us      55us     727us
+1.97,1.97,RAIDZ2_8C,1,1414665147,80G,,,,129935,71,82900,56,,,244013,55,120.1,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,263ms,4301ms,,691ms,401ms,6891us,176us,764us,777us,55us,727us
+Thu Oct 30 08:40:40 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           129177  71 82604  56           248555  56 117.4   6
+Latency                         302ms    3420ms               452ms     379ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               740us     171us     711us     773us     103us     755us
+1.97,1.97,RAIDZ2_8C,1,1414665092,80G,,,,129177,71,82604,56,,,248555,56,117.4,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,302ms,3420ms,,452ms,379ms,740us,171us,711us,773us,103us,755us
+Thu Oct 30 08:40:42 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           128598  71 82634  56           249635  57 113.8   6
+Latency                         322ms    4682ms               768ms     573ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency              9848us     185us     758us     782us     635us     128us
+1.97,1.97,RAIDZ2_8C,1,1414665146,80G,,,,128598,71,82634,56,,,249635,57,113.8,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,322ms,4682ms,,768ms,573ms,9848us,185us,758us,782us,635us,128us
+Thu Oct 30 08:40:45 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           128404  71 82552  56           251123  57 113.3   5
+Latency                         278ms    4299ms               312ms     628ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               808us     175us     759us     733us     653us     181us
+1.97,1.97,RAIDZ2_8C,1,1414665095,80G,,,,128404,71,82552,56,,,251123,57,113.3,5,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,278ms,4299ms,,312ms,628ms,808us,175us,759us,733us,653us,181us
+Thu Oct 30 08:40:45 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           127772  71 82324  56           254922  58 111.2   5
+Latency                         237ms    2899ms               385ms     649ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency             23653us     231us     714us     728us      69us     746us
+1.97,1.97,RAIDZ2_8C,1,1414665144,80G,,,,127772,71,82324,56,,,254922,58,111.2,5,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,237ms,2899ms,,385ms,649ms,23653us,231us,714us,728us,69us,746us
+Thu Oct 30 08:40:47 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           128272  71 81872  56           256874  58 111.1   5
+Latency                         301ms    3987ms               280ms     478ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               736us     231us     750us     758us     604us     710us
+1.97,1.97,RAIDZ2_8C,1,1414665093,80G,,,,128272,71,81872,56,,,256874,58,111.1,5,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,301ms,3987ms,,280ms,478ms,736us,231us,750us,758us,604us,710us
+Thu Oct 30 08:40:48 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           131124  68 85507  55           229793  48 103.5   6
+Latency                         241ms    1937ms               736ms     923ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++   649   1 +++++ +++
+Latency               784us     173us     684us   96468us    1552ms     200us
+1.97,1.97,RAIDZ2_8C,1,1414667809,80G,,,,131124,68,85507,55,,,229793,48,103.5,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,649,1,+++++,+++,,241ms,1937ms,,736ms,923ms,784us,173us,684us,96468us,1552ms,200us
+Thu Oct 30 09:16:23 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           131884  68 85425  54           229055  48 100.3   6
+Latency                         259ms    2632ms               798ms    1396ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1   559   7 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency              1525ms     565us     267us     194us     612us     136us
+1.97,1.97,RAIDZ2_8C,1,1414667812,80G,,,,131884,68,85425,54,,,229055,48,100.3,6,1,,,,,559,7,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,259ms,2632ms,,798ms,1396ms,1525ms,565us,267us,194us,612us,136us
+Thu Oct 30 09:16:23 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           124425  66 84259  55           227110  49 115.8   6
+Latency                         250ms    1107ms              2633ms     534ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               179ms     183us     689us    1065us   11516us    4912us
+1.97,1.97,RAIDZ2_8C,1,1414667810,80G,,,,124425,66,84259,55,,,227110,49,115.8,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,250ms,1107ms,,2633ms,534ms,179ms,183us,689us,1065us,11516us,4912us
+Thu Oct 30 09:17:06 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           124827  66 83368  55           231158  49 118.6   6
+Latency                         202ms     795ms              3225ms     504ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               705us     627us     695us    7046us     586us    1151us
+1.97,1.97,RAIDZ2_8C,1,1414667815,80G,,,,124827,66,83368,55,,,231158,49,118.6,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,202ms,795ms,,3225ms,504ms,705us,627us,695us,7046us,586us,1151us
+Thu Oct 30 09:17:06 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           122711  65 84654  56           229524  49 116.0   6
+Latency                         269ms    1000ms              1816ms     467ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency              7017us    1239us     680us     130us      59us     674us
+1.97,1.97,RAIDZ2_8C,1,1414667811,80G,,,,122711,65,84654,56,,,229524,49,116.0,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,269ms,1000ms,,1816ms,467ms,7017us,1239us,680us,130us,59us,674us
+Thu Oct 30 09:17:07 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           122711  66 84885  56           228006  49 114.3   6
+Latency                         263ms    1191ms              1673ms     416ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               651us     180us     648us     737us     607us     709us
+1.97,1.97,RAIDZ2_8C,1,1414667813,80G,,,,122711,66,84885,56,,,228006,49,114.3,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,263ms,1191ms,,1673ms,416ms,651us,180us,648us,737us,607us,709us
+Thu Oct 30 09:17:08 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           122711  66 84339  55           230222  50 117.7   6
+Latency                         180ms    1034ms              3003ms     444ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency             10097us     188us     679us     649us     588us     122us
+1.97,1.97,RAIDZ2_8C,1,1414667814,80G,,,,122711,66,84339,55,,,230222,50,117.7,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,180ms,1034ms,,3003ms,444ms,10097us,188us,679us,649us,588us,122us
+Thu Oct 30 09:17:08 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           121381  65 84616  56           228223  48 119.3   6
+Latency                         248ms     890ms               991ms     430ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               801us     181us     692us   14891us      56us     783us
+1.97,1.97,RAIDZ2_8C,1,1414667808,80G,,,,121381,65,84616,56,,,228223,48,119.3,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,248ms,890ms,,991ms,430ms,801us,181us,692us,14891us,56us,783us
+Thu Oct 30 09:17:12 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           129033  68 84507  55           220878  47 116.4   6
+Latency                        2405ms    3132ms              2231ms     403ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               764us     176us     726us     741us     646us     320us
+1.97,1.97,RAIDZ2_8C,1,1414668509,80G,,,,129033,68,84507,55,,,220878,47,116.4,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,2405ms,3132ms,,2231ms,403ms,764us,176us,726us,741us,646us,320us
+Thu Oct 30 09:53:13 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           128591  68 84551  55           221465  47 116.9   6
+Latency                        2404ms    1246ms               845ms     392ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               767us     178us     735us   99501us     689us     729us
+1.97,1.97,RAIDZ2_8C,1,1414668510,80G,,,,128591,68,84551,55,,,221465,47,116.9,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,2404ms,1246ms,,845ms,392ms,767us,178us,735us,99501us,689us,729us
+Thu Oct 30 09:53:13 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           129471  68 84526  55           219807  47 114.0   6
+Latency                        2405ms    1828ms               963ms     384ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               743us     195us     792us     756us      51us     834us
+1.97,1.97,RAIDZ2_8C,1,1414668497,80G,,,,129471,68,84526,55,,,219807,47,114.0,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,2405ms,1828ms,,963ms,384ms,743us,195us,792us,756us,51us,834us
+Thu Oct 30 09:53:14 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           125218  67 84411  55           228823  49 112.6   6
+Latency                        2192ms    1056ms              1052ms     552ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               667us     399us     722us     728us    2654us     732us
+1.97,1.97,RAIDZ2_8C,1,1414668503,80G,,,,125218,67,84411,55,,,228823,49,112.6,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,2192ms,1056ms,,1052ms,552ms,667us,399us,722us,728us,2654us,732us
+Thu Oct 30 09:53:23 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           124469  66 84363  56           231382  50 113.0   6
+Latency                        2405ms    1179ms               451ms     405ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency             78741us     221us     727us    7066us    8899us     127us
+1.97,1.97,RAIDZ2_8C,1,1414668508,80G,,,,124469,66,84363,56,,,231382,50,113.0,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,2405ms,1179ms,,451ms,405ms,78741us,221us,727us,7066us,8899us,127us
+Thu Oct 30 09:53:23 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           124469  66 84653  56           229321  50 111.5   6
+Latency                        2402ms     994ms              1239ms     473ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               650us     185us     686us   10376us      62us     649us
+1.97,1.97,RAIDZ2_8C,1,1414668498,80G,,,,124469,66,84653,56,,,229321,50,111.5,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,2402ms,994ms,,1239ms,473ms,650us,185us,686us,10376us,62us,649us
+Thu Oct 30 09:53:24 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           124469  66 84363  55           231194  49 110.0   6
+Latency                        2404ms    1089ms               362ms     391ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               709us     188us     714us     712us      61us     681us
+1.97,1.97,RAIDZ2_8C,1,1414668499,80G,,,,124469,66,84363,55,,,231194,49,110.0,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,2404ms,1089ms,,362ms,391ms,709us,188us,714us,712us,61us,681us
+Thu Oct 30 09:53:25 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           126070  67 83430  55           232664  50 109.4   6
+Latency                        2405ms     959ms               383ms     544ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               715us     588us     715us   18759us      56us     627us
+1.97,1.97,RAIDZ2_8C,1,1414668496,80G,,,,126070,67,83430,55,,,232664,50,109.4,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,2405ms,959ms,,383ms,544ms,715us,588us,715us,18759us,56us,627us
+Thu Oct 30 09:53:25 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           124121  67 83896  56           241018  53 113.3   6
+Latency                         185ms    4838ms               585ms     450ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               797us     171us     733us     275us      54us     769us
+1.97,1.97,RAIDZ2_8C,1,1414670515,80G,,,,124121,67,83896,56,,,241018,53,113.3,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,185ms,4838ms,,585ms,450ms,797us,171us,733us,275us,54us,769us
+Thu Oct 30 10:29:29 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           124119  67 84322  57           236835  53 110.7   6
+Latency                         310ms    2761ms              1355ms     440ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               133us     174us     808us     172us      60us     705us
+1.97,1.97,RAIDZ2_8C,1,1414670507,80G,,,,124119,67,84322,57,,,236835,53,110.7,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,310ms,2761ms,,1355ms,440ms,133us,174us,808us,172us,60us,705us
+Thu Oct 30 10:29:32 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           124121  67 83896  56           240121  53 110.3   6
+Latency                         288ms    5592ms               796ms     448ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency             48548us     185us     827us     707us      59us     778us
+1.97,1.97,RAIDZ2_8C,1,1414670506,80G,,,,124121,67,83896,56,,,240121,53,110.3,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,288ms,5592ms,,796ms,448ms,48548us,185us,827us,707us,59us,778us
+Thu Oct 30 10:29:32 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           124121  67 84219  56           237647  53 106.3   6
+Latency                         288ms    1356ms              1172ms     555ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency              5023us     184us     723us     658us      56us     684us
+1.97,1.97,RAIDZ2_8C,1,1414670510,80G,,,,124121,67,84219,56,,,237647,53,106.3,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,288ms,1356ms,,1172ms,555ms,5023us,184us,723us,658us,56us,684us
+Thu Oct 30 10:29:34 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           124121  67 84219  56           234326  52 107.2   6
+Latency                         292ms    4868ms               757ms     484ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               679us     188us     689us     716us      57us     688us
+1.97,1.97,RAIDZ2_8C,1,1414670509,80G,,,,124121,67,84219,56,,,234326,52,107.2,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,292ms,4868ms,,757ms,484ms,679us,188us,689us,716us,57us,688us
+Thu Oct 30 10:29:38 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           125627  68 83221  56           235820  52 107.0   6
+Latency                         301ms    4534ms               959ms     612ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency             10255us     180us     682us     101us      60us     694us
+1.97,1.97,RAIDZ2_8C,1,1414670508,80G,,,,125627,68,83221,56,,,235820,52,107.0,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,301ms,4534ms,,959ms,612ms,10255us,180us,682us,101us,60us,694us
+Thu Oct 30 10:29:40 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           123589  67 82876  56           242344  53 109.3   6
+Latency                         282ms    4890ms               459ms     549ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               109us     174us     762us     762us      56us     720us
+1.97,1.97,RAIDZ2_8C,1,1414670512,80G,,,,123589,67,82876,56,,,242344,53,109.3,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,282ms,4890ms,,459ms,549ms,109us,174us,762us,762us,56us,720us
+Thu Oct 30 10:29:43 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           123591  67 82975  56           238977  52 113.1   6
+Latency                         225ms    3661ms               447ms     505ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency             20012us     230us     689us     722us      71us     718us
+1.97,1.97,RAIDZ2_8C,1,1414670511,80G,,,,123591,67,82975,56,,,238977,52,113.1,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,225ms,3661ms,,447ms,505ms,20012us,230us,689us,722us,71us,718us
+Thu Oct 30 10:29:44 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           131644  68 80137  51           231314  49 101.2   6
+Latency                         342ms    2293ms               712ms    1568ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               724us     638us     234us     127us      56us     743us
+1.97,1.97,RAIDZ2_8C,1,1414672940,80G,,,,131644,68,80137,51,,,231314,49,101.2,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,342ms,2293ms,,712ms,1568ms,724us,638us,234us,127us,56us,743us
+Thu Oct 30 11:06:20 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           130849  68 80307  52           231511  49  97.5   5
+Latency                         283ms    1358ms               586ms    1673ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               728us     194us     676us     696us   35753us     715us
+1.97,1.97,RAIDZ2_8C,1,1414672943,80G,,,,130849,68,80307,52,,,231511,49,97.5,5,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,283ms,1358ms,,586ms,1673ms,728us,194us,676us,696us,35753us,715us
+Thu Oct 30 11:06:24 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           125023  66 79768  52           228995  49 113.1   6
+Latency                         337ms     859ms              2239ms     490ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1  1408  27 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               412ms     266us     704us   13768us    1138us   14516us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           125360  66 80103  53           225708  48 111.8   5
+Latency                         351ms     722ms              7211ms     387ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1  1420  27 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               412ms     279us     705us   12062us    7147us    3658us
+1.97,1.97,RAIDZ2_8C,1,1414672931,80G,,,,125023,66,79768,52,,,228995,49,113.1,6,1,,,,,1408,27,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,337ms,859ms,,2239ms,490ms,412ms,266us,704us,13768us,1138us,14516us
+1.97,1.97,RAIDZ2_8C,1,1414672941,80G,,,,125360,66,80103,53,,,225708,48,111.8,5,1,,,,,1420,27,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,351ms,722ms,,7211ms,387ms,412ms,279us,705us,12062us,7147us,3658us
+Thu Oct 30 11:06:55 PDT 2014
+Thu Oct 30 11:06:55 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           121674  64 81364  53           227663  49 112.4   6
+Latency                         196ms     954ms              4624ms     518ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency             38949us    1492us   10874us     710us      61us     710us
+1.97,1.97,RAIDZ2_8C,1,1414672936,80G,,,,121674,64,81364,53,,,227663,49,112.4,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,196ms,954ms,,4624ms,518ms,38949us,1492us,10874us,710us,61us,710us
+Thu Oct 30 11:06:55 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           121674  65 81281  53           228366  49 107.4   5
+Latency                         344ms    1193ms              2475ms     613ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               154us     199us     669us     211us     619us     165us
+1.97,1.97,RAIDZ2_8C,1,1414672937,80G,,,,121674,65,81281,53,,,228366,49,107.4,5,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,344ms,1193ms,,2475ms,613ms,154us,199us,669us,211us,619us,165us
+Thu Oct 30 11:06:57 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           121674  64 81022  53           230109  49 109.8   5
+Latency                         340ms    1361ms              4477ms     592ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency             10475us     221us     626us     693us      83us     664us
+1.97,1.97,RAIDZ2_8C,1,1414672942,80G,,,,121674,64,81022,53,,,230109,49,109.8,5,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,340ms,1361ms,,4477ms,592ms,10475us,221us,626us,693us,83us,664us
+Thu Oct 30 11:06:57 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           121674  64 80378  53           234274  50 104.6   6
+Latency                         352ms     755ms              1278ms     539ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               682us     581us     247us   15105us      59us     686us
+1.97,1.97,RAIDZ2_8C,1,1414672930,80G,,,,121674,64,80378,53,,,234274,50,104.6,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,352ms,755ms,,1278ms,539ms,682us,581us,247us,15105us,59us,686us
+Thu Oct 30 11:06:58 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           126116  66 82980  54           236940  52 112.1   6
+Latency                        2693ms    1391ms              7074ms     431ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               112us     174us     725us     768us     113us     723us
+1.97,1.97,RAIDZ2_8C,1,1414674314,80G,,,,126116,66,82980,54,,,236940,52,112.1,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,2693ms,1391ms,,7074ms,431ms,112us,174us,725us,768us,113us,723us
+Thu Oct 30 11:43:09 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           127946  67 82208  54           237357  52 110.9   6
+Latency                        2692ms    1593ms              6118ms     429ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               767us     678us     730us     203us      51us     741us
+1.97,1.97,RAIDZ2_8C,1,1414674313,80G,,,,127946,67,82208,54,,,237357,52,110.9,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,2692ms,1593ms,,6118ms,429ms,767us,678us,730us,203us,51us,741us
+Thu Oct 30 11:43:11 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           127527  67 81858  53           241399  53 110.0   6
+Latency                        2686ms    1229ms               772ms     423ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency             22480us     200us     699us    2557us    1879us     725us
+1.97,1.97,RAIDZ2_8C,1,1414674316,80G,,,,127527,67,81858,53,,,241399,53,110.0,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,2686ms,1229ms,,772ms,423ms,22480us,200us,699us,2557us,1879us,725us
+Thu Oct 30 11:43:11 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           121706  64 83911  55           245206  54 110.4   6
+Latency                        2690ms    1029ms              2050ms     413ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               683us     198us     705us     679us    7557us    1379us
+1.97,1.97,RAIDZ2_8C,1,1414674311,80G,,,,121706,64,83911,55,,,245206,54,110.4,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,2690ms,1029ms,,2050ms,413ms,683us,198us,705us,679us,7557us,1379us
+Thu Oct 30 11:43:12 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           126116  66 83225  54           235070  51 108.2   6
+Latency                        2691ms    1076ms              7676ms     412ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency              4934us     207us    2722us     759us      57us     711us
+1.97,1.97,RAIDZ2_8C,1,1414674310,80G,,,,126116,66,83225,54,,,235070,51,108.2,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,2691ms,1076ms,,7676ms,412ms,4934us,207us,2722us,759us,57us,711us
+Thu Oct 30 11:43:12 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           126114  66 82450  54           241203  53 108.4   6
+Latency                        2689ms    1549ms              3471ms     434ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               138us     624us    7525us   11907us      50us     717us
+1.97,1.97,RAIDZ2_8C,1,1414674317,80G,,,,126114,66,82450,54,,,241203,53,108.4,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,2689ms,1549ms,,3471ms,434ms,138us,624us,7525us,11907us,50us,717us
+Thu Oct 30 11:43:12 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           121706  64 82882  54           241265  53 118.3   7
+Latency                        2692ms    1422ms               590ms     626ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               717us     610us     732us     750us     620us     726us
+1.97,1.97,RAIDZ2_8C,1,1414674315,80G,,,,121706,64,82882,54,,,241265,53,118.3,7,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,2692ms,1422ms,,590ms,626ms,717us,610us,732us,750us,620us,726us
+Thu Oct 30 11:43:23 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           121706  64 82301  54           245036  53 120.7   7
+Latency                        2688ms     901ms               411ms     535ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               736us     269us     763us     746us      61us     762us
+1.97,1.97,RAIDZ2_8C,1,1414674312,80G,,,,121706,64,82301,54,,,245036,53,120.7,7,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,2688ms,901ms,,411ms,535ms,736us,269us,763us,746us,61us,762us
+Thu Oct 30 11:43:23 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           124922  67 80967  54           231310  51 111.5   6
+Latency                         276ms    2396ms               881ms     425ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency             42480us     174us     759us     739us     651us     180us
+1.97,1.97,RAIDZ2_8C,1,1414712502,80G,,,,124922,67,80967,54,,,231310,51,111.5,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,276ms,2396ms,,881ms,425ms,42480us,174us,759us,739us,651us,180us
+Thu Oct 30 12:20:14 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           124237  67 80875  54           232758  51 113.1   6
+Latency                         277ms    3281ms               714ms     458ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               720us     169us     720us    8472us      45us     736us
+1.97,1.97,RAIDZ2_8C,1,1414712501,80G,,,,124237,67,80875,54,,,232758,51,113.1,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,277ms,3281ms,,714ms,458ms,720us,169us,720us,8472us,45us,736us
+Thu Oct 30 12:20:16 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           123581  67 80833  54           235089  52 110.6   6
+Latency                         294ms    1571ms               985ms     433ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               118us     170us     747us     703us      57us     769us
+1.97,1.97,RAIDZ2_8C,1,1414712503,80G,,,,123581,67,80833,54,,,235089,52,110.6,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,294ms,1571ms,,985ms,433ms,118us,170us,747us,703us,57us,769us
+Thu Oct 30 12:20:17 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           124032  67 80875  54           231750  51 108.9   6
+Latency                         276ms    1503ms               773ms     459ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               186us     188us     632us     634us      63us     701us
+1.97,1.97,RAIDZ2_8C,1,1414712500,80G,,,,124032,67,80875,54,,,231750,51,108.9,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,276ms,1503ms,,773ms,459ms,186us,188us,632us,634us,63us,701us
+Thu Oct 30 12:20:21 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           125422  67 81423  54           224019  49 105.7   5
+Latency                         397ms    1798ms              2213ms     455ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency             10788us     211us     728us     718us      68us     700us
+1.97,1.97,RAIDZ2_8C,1,1414712488,80G,,,,125422,67,81423,54,,,224019,49,105.7,5,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,397ms,1798ms,,2213ms,455ms,10788us,211us,728us,718us,68us,700us
+Thu Oct 30 12:20:21 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           121817  66 79783  53           242017  53 113.3   6
+Latency                         307ms    2182ms               379ms     404ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               710us     209us     783us     107us      64us     707us
+1.97,1.97,RAIDZ2_8C,1,1414712498,80G,,,,121817,66,79783,53,,,242017,53,113.3,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,307ms,2182ms,,379ms,404ms,710us,209us,783us,107us,64us,707us
+Thu Oct 30 12:20:28 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           121817  66 80501  54           235258  52 113.5   6
+Latency                         282ms    1768ms               831ms     440ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               692us     262us     689us     670us      72us     696us
+1.97,1.97,RAIDZ2_8C,1,1414712499,80G,,,,121817,66,80501,54,,,235258,52,113.5,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,282ms,1768ms,,831ms,440ms,692us,262us,689us,670us,72us,696us
+Thu Oct 30 12:20:29 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           121817  66 79783  53           240656  53 112.6   6
+Latency                         270ms    1394ms               362ms     405ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               689us     195us     627us    4971us      61us     655us
+1.97,1.97,RAIDZ2_8C,1,1414712489,80G,,,,121817,66,79783,53,,,240656,53,112.6,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,270ms,1394ms,,362ms,405ms,689us,195us,627us,4971us,61us,655us
+Thu Oct 30 12:20:30 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           127509  69 83808  56           236097  52 106.7   6
+Latency                        1190ms     870ms               494ms     671ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency             38977us     179us     712us     698us      66us     119us
+1.97,1.97,RAIDZ2_8C,1,1414709783,80G,,,,127509,69,83808,56,,,236097,52,106.7,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,1190ms,870ms,,494ms,671ms,38977us,179us,712us,698us,66us,119us
+Thu Oct 30 12:56:29 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           128735  69 84116  56           228520  50 107.6   6
+Latency                        1189ms    1139ms              1203ms     414ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               785us     456ms     824us     771us      64us     664us
+1.97,1.97,RAIDZ2_8C,1,1414709779,80G,,,,128735,69,84116,56,,,228520,50,107.6,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,1189ms,1139ms,,1203ms,414ms,785us,456ms,824us,771us,64us,664us
+Thu Oct 30 12:56:31 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           126967  69 83761  56           236185  52 104.0   5
+Latency                        1190ms     871ms               515ms     466ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               747us     185us     720us     739us      59us     659us
+1.97,1.97,RAIDZ2_8C,1,1414709776,80G,,,,126967,69,83761,56,,,236185,52,104.0,5,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,1190ms,871ms,,515ms,466ms,747us,185us,720us,739us,59us,659us
+Thu Oct 30 12:56:33 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           125109  68 83956  56           240398  53 104.7   5
+Latency                        1190ms    1007ms               337ms     598ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency              4972us     178us     637us   14171us      57us     679us
+1.97,1.97,RAIDZ2_8C,1,1414709778,80G,,,,125109,68,83956,56,,,240398,53,104.7,5,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,1190ms,1007ms,,337ms,598ms,4972us,178us,637us,14171us,57us,679us
+Thu Oct 30 12:56:34 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           125804  68 83851  56           236680  52 100.0   6
+Latency                        1190ms     893ms               393ms     499ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               769us     231us     756us     766us     418us     753us
+1.97,1.97,RAIDZ2_8C,1,1414709781,80G,,,,125804,68,83851,56,,,236680,52,100.0,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,1190ms,893ms,,393ms,499ms,769us,231us,756us,766us,418us,753us
+Thu Oct 30 12:56:38 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           127633  68 83710  56           232049  51  99.0   6
+Latency                        1187ms     941ms               591ms     421ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               957us     235us     742us   18136us     607us     777us
+1.97,1.97,RAIDZ2_8C,1,1414709777,80G,,,,127633,68,83710,56,,,232049,51,99.0,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,1187ms,941ms,,591ms,421ms,957us,235us,742us,18136us,607us,777us
+Thu Oct 30 12:56:38 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           125804  68 84146  56           232868  51 102.7   5
+Latency                        1190ms     986ms               541ms     516ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               747us     632us     730us     763us      69us     761us
+1.97,1.97,RAIDZ2_8C,1,1414709780,80G,,,,125804,68,84146,56,,,232868,51,102.7,5,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,1190ms,986ms,,541ms,516ms,747us,632us,730us,763us,69us,761us
+Thu Oct 30 12:56:40 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           125109  68 83000  56           244432  53 102.7   5
+Latency                        1082ms     722ms               400ms     419ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               813us     244us     751us   26262us      82us     649us
+1.97,1.97,RAIDZ2_8C,1,1414709782,80G,,,,125109,68,83000,56,,,244432,53,102.7,5,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,1082ms,722ms,,400ms,419ms,813us,244us,751us,26262us,82us,649us
+Thu Oct 30 12:56:41 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           124946  67 84948  57           237621  53 114.6   6
+Latency                         491ms    1473ms               705ms     414ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               113us     644us     247us     794us      54us     738us
+1.97,1.97,RAIDZ2_8C,1,1414715200,80G,,,,124946,67,84948,57,,,237621,53,114.6,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,491ms,1473ms,,705ms,414ms,113us,644us,247us,794us,54us,738us
+Thu Oct 30 13:32:32 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           124459  67 84916  57           239233  53 113.2   6
+Latency                         216ms    1470ms               802ms     354ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               806us     169us     756us   80199us      51us     712us
+1.97,1.97,RAIDZ2_8C,1,1414715204,80G,,,,124459,67,84916,57,,,239233,53,113.2,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,216ms,1470ms,,802ms,354ms,806us,169us,756us,80199us,51us,712us
+Thu Oct 30 13:32:33 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           122914  66 85296  57           241856  54 113.3   6
+Latency                         484ms     839ms               646ms     450ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               739us     174us     675us     793us      52us     805us
+1.97,1.97,RAIDZ2_8C,1,1414715206,80G,,,,122914,66,85296,57,,,241856,54,113.3,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,484ms,839ms,,646ms,450ms,739us,174us,675us,793us,52us,805us
+Thu Oct 30 13:32:34 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           122914  66 85296  57           241025  53 112.0   6
+Latency                         468ms     948ms               573ms     371ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               705us     187us     674us    4935us      72us     705us
+1.97,1.97,RAIDZ2_8C,1,1414715201,80G,,,,122914,66,85296,57,,,241025,53,112.0,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,468ms,948ms,,573ms,371ms,705us,187us,674us,4935us,72us,705us
+Thu Oct 30 13:32:35 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           122914  66 85296  57           240914  54 108.4   6
+Latency                         457ms     894ms               666ms     610ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               688us     601us     247us     162us      62us     689us
+1.97,1.97,RAIDZ2_8C,1,1414715207,80G,,,,122914,66,85296,57,,,240914,54,108.4,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,457ms,894ms,,666ms,610ms,688us,601us,247us,162us,62us,689us
+Thu Oct 30 13:32:37 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           122522  66 85182  57           242706  54 106.7   6
+Latency                         278ms     929ms               598ms     537ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               699us     610us     245us    9844us      64us     656us
+1.97,1.97,RAIDZ2_8C,1,1414715213,80G,,,,122522,66,85182,57,,,242706,54,106.7,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,278ms,929ms,,598ms,537ms,699us,610us,245us,9844us,64us,656us
+Thu Oct 30 13:32:39 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           122912  66 84993  57           240551  53 105.7   6
+Latency                         457ms    1123ms               511ms     419ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               643us     180us     685us     718us      58us     656us
+1.97,1.97,RAIDZ2_8C,1,1414715203,80G,,,,122912,66,84993,57,,,240551,53,105.7,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,457ms,1123ms,,511ms,419ms,643us,180us,685us,718us,58us,656us
+Thu Oct 30 13:32:40 PDT 2014
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_8C       80G           122522  66 84545  57           241794  53 110.1   6
+Latency                         464ms     778ms               312ms     477ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_8C           -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               708us     185us     751us   14967us      54us     755us
+1.97,1.97,RAIDZ2_8C,1,1414715202,80G,,,,122522,66,84545,57,,,241794,53,110.1,6,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,464ms,778ms,,312ms,477ms,708us,185us,751us,14967us,54us,755us
+Thu Oct 30 13:32:43 PDT 2014
