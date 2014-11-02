@@ -1,0 +1,93 @@
+# ZFS Results for iSCSI_L2_80G, 7 runs, median value
+# 200GB L2ARC, no SLOG
+# w: 67MB/s  r: 71MB/s  IOPS:  145.7
+
+# Ops Manager (Ubuntu 12.04.4 LTS x86_64)
+# running under ESXi 5.5
+# running under VMware Fusion 7.0
+# running under OS X 10.10
+# on an iSCSI-based FreeNAS server
+#
+# RAIDZ2, 200G L2ARC, no SLOG, 80G file, userland iSCSI
+#
+# 80GB FILE SIZE (VM only has 1GB RAM), no L2ARC
+#
+# for I in $(seq 0 8); do bonnie++ -m "iSCSI_L2_80G" -r 8192 -s 81920 -d /tmp/ -f -b -n 1 >> ~/bonnie.txt; sleep 60; done
+
+Version  1.96       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+iSCSI_L2_80G    80G           74149   9 36447   5           76552   6 148.7   6
+Latency                        2331ms    1562ms               230ms     327ms
+Version  1.96       ------Sequential Create------ --------Random Create--------
+iSCSI_L2_80G        -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1   465   2 +++++ +++   542   1   466   1 +++++ +++    95   0
+Latency               120ms      35us   49144us   57307us       5us     133ms
+1.96,1.96,iSCSI_L2_80G,1,1413948239,80G,,,,74149,9,36447,5,,,76552,6,148.7,6,1,,,,,465,2,+++++,+++,542,1,466,1,+++++,+++,95,0,,2331ms,1562ms,,230ms,327ms,120ms,35us,49144us,57307us,5us,133ms
+Version  1.96       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+iSCSI_L2_80G    80G           66636   8 36003   5           75506   6 158.7   7
+Latency                        1918ms    1238ms               333ms     287ms
+Version  1.96       ------Sequential Create------ --------Random Create--------
+iSCSI_L2_80G        -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1   425   1 +++++ +++   530   1   499   1 +++++ +++   149   0
+Latency               105ms      40us   20424us   69387us       5us     123ms
+1.96,1.96,iSCSI_L2_80G,1,1413951986,80G,,,,66636,8,36003,5,,,75506,6,158.7,7,1,,,,,425,1,+++++,+++,530,1,499,1,+++++,+++,149,0,,1918ms,1238ms,,333ms,287ms,105ms,40us,20424us,69387us,5us,123ms
+Version  1.96       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+iSCSI_L2_80G    80G           69179   9 35225   5           74305   6 157.6   7
+Latency                        2068ms    1179ms               419ms     440ms
+Version  1.96       ------Sequential Create------ --------Random Create--------
+iSCSI_L2_80G        -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1   513   2 +++++ +++   467   1   531   1 +++++ +++   148   0
+Latency             41332us      37us   44603us     106ms      87us   66704us
+1.96,1.96,iSCSI_L2_80G,1,1413956810,80G,,,,69179,9,35225,5,,,74305,6,157.6,7,1,,,,,513,2,+++++,+++,467,1,531,1,+++++,+++,148,0,,2068ms,1179ms,,419ms,440ms,41332us,37us,44603us,106ms,87us,66704us
+Version  1.96       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+iSCSI_L2_80G    80G           62335   8 35260   5           71237   5 114.1   5
+Latency                        1928ms    1437ms               442ms     505ms
+Version  1.96       ------Sequential Create------ --------Random Create--------
+iSCSI_L2_80G        -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1   435   2 +++++ +++   543   1   483   1 +++++ +++   137   0
+Latency             51251us      61us   22678us   66530us      77us     128ms
+1.96,1.96,iSCSI_L2_80G,1,1413962364,80G,,,,62335,8,35260,5,,,71237,5,114.1,5,1,,,,,435,2,+++++,+++,543,1,483,1,+++++,+++,137,0,,1928ms,1437ms,,442ms,505ms,51251us,61us,22678us,66530us,77us,128ms
+Version  1.96       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+iSCSI_L2_80G    80G           65328   8 35419   5           71807   5 145.7   6
+Latency                        1979ms    1195ms               519ms     380ms
+Version  1.96       ------Sequential Create------ --------Random Create--------
+iSCSI_L2_80G        -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1   494   2 +++++ +++   456   1   578   1 +++++ +++   143   0
+Latency             56420us      41us   77381us   26533us      36us     146ms
+1.96,1.96,iSCSI_L2_80G,1,1413967426,80G,,,,65328,8,35419,5,,,71807,5,145.7,6,1,,,,,494,2,+++++,+++,456,1,578,1,+++++,+++,143,0,,1979ms,1195ms,,519ms,380ms,56420us,41us,77381us,26533us,36us,146ms
+Version  1.96       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+iSCSI_L2_80G    80G           69112   9 34954   5           68369   6 129.7   6
+Latency                        1878ms    1787ms               540ms     311ms
+Version  1.96       ------Sequential Create------ --------Random Create--------
+iSCSI_L2_80G        -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1   465   2 +++++ +++   549   1   523   1 +++++ +++   146   0
+Latency             53079us      36us   26684us   54552us      36us     122ms
+1.96,1.96,iSCSI_L2_80G,1,1413972790,80G,,,,69112,9,34954,5,,,68369,6,129.7,6,1,,,,,465,2,+++++,+++,549,1,523,1,+++++,+++,146,0,,1878ms,1787ms,,540ms,311ms,53079us,36us,26684us,54552us,36us,122ms
+Version  1.96       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+iSCSI_L2_80G    80G           67811   9 34649   6           69536   5 139.6   6
+Latency                        1949ms    1202ms               533ms     326ms
+Version  1.96       ------Sequential Create------ --------Random Create--------
+iSCSI_L2_80G        -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1   525   2 +++++ +++   466   1   569   1 +++++ +++   130   0
+Latency             92923us     329us     110ms   41682us       4us     151ms
+1.96,1.96,iSCSI_L2_80G,1,1413976230,80G,,,,67811,9,34649,6,,,69536,5,139.6,6,1,,,,,525,2,+++++,+++,466,1,569,1,+++++,+++,130,0,,1949ms,1202ms,,533ms,326ms,92923us,329us,110ms,41682us,4us,151ms
