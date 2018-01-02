@@ -1,0 +1,99 @@
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+SSD_SATA_80G    80G           256640  86 152908  30           383577  41  5060 255
+Latency                         182ms     249ms             11962us   10236us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+SSD_SATA_80G        -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               522us     170us     938us     679us      43us     280us
+1.97,1.97,SSD_SATA_80G,1,1514906022,80G,,,,256640,86,152908,30,,,383577,41,5060,255,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,182ms,249ms,,11962us,10236us,522us,170us,938us,679us,43us,280us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+SSD_SATA_80G    80G           313349  86 153508  31           352173  37  5234 224
+Latency                       93180us     354ms              8814us   12093us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+SSD_SATA_80G        -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               888us     195us     970us     419us      36us     358us
+1.97,1.97,SSD_SATA_80G,1,1514906658,80G,,,,313349,86,153508,31,,,352173,37,5234,224,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,93180us,354ms,,8814us,12093us,888us,195us,970us,419us,36us,358us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+SSD_SATA_80G    80G           288357  83 152345  31           386748  39  4927 271
+Latency                       91723us     340ms              8997us   10421us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+SSD_SATA_80G        -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               479us     160us    1013us     604us      39us     271us
+1.97,1.97,SSD_SATA_80G,1,1514911796,80G,,,,288357,83,152345,31,,,386748,39,4927,271,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,91723us,340ms,,8997us,10421us,479us,160us,1013us,604us,39us,271us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+SSD_SATA_80G    80G           293228  82 152684  30           342629  37  5187 223
+Latency                         118ms     187ms              8656us   10545us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+SSD_SATA_80G        -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               471us     164us     971us     487us      39us     265us
+1.97,1.97,SSD_SATA_80G,1,1514912903,80G,,,,293228,82,152684,30,,,342629,37,5187,223,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,118ms,187ms,,8656us,10545us,471us,164us,971us,487us,39us,265us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+SSD_SATA_80G    80G           110696  92 151216  31           349665  38  5219 224
+Latency                         181ms     172ms              9272us    7797us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+SSD_SATA_80G        -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               860us     156us     957us    1229us      38us     338us
+1.97,1.97,SSD_SATA_80G,1,1514911541,80G,,,,110696,92,151216,31,,,349665,38,5219,224,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,181ms,172ms,,9272us,7797us,860us,156us,957us,1229us,38us,338us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+SSD_SATA_80G    80G           291390  83 152593  31           349616  38  5244 226
+Latency                         185ms     188ms              8998us    9385us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+SSD_SATA_80G        -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               563us     170us     857us     427us      73us     310us
+1.97,1.97,SSD_SATA_80G,1,1514916308,80G,,,,291390,83,152593,31,,,349616,38,5244,226,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,185ms,188ms,,8998us,9385us,563us,170us,857us,427us,73us,310us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+SSD_SATA_80G    80G           292077  83 151122  30           356505  38  4970 224
+Latency                       85228us     246ms             11829us   31931us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+SSD_SATA_80G        -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               515us     190us     877us     581us      37us     333us
+1.97,1.97,SSD_SATA_80G,1,1514917032,80G,,,,292077,83,151122,30,,,356505,38,4970,224,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,85228us,246ms,,11829us,31931us,515us,190us,877us,581us,37us,333us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+SSD_SATA_80G    80G           291777  83 152984  31           361137  40  5303 227
+Latency                       94283us     214ms              8557us    9949us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+SSD_SATA_80G        -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               460us     169us     861us     844us      41us     247us
+1.97,1.97,SSD_SATA_80G,1,1514913795,80G,,,,291777,83,152984,31,,,361137,40,5303,227,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,94283us,214ms,,8557us,9949us,460us,169us,861us,844us,41us,247us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+SSD_SATA_80G    80G           288478  83 152276  31           357206  38  5289 222
+Latency                         163ms     226ms              8485us    9736us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+SSD_SATA_80G        -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               488us     173us     956us     545us      40us    1633us
+1.97,1.97,SSD_SATA_80G,1,1514920870,80G,,,,288478,83,152276,31,,,357206,38,5289,222,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,163ms,226ms,,8485us,9736us,488us,173us,956us,545us,40us,1633us

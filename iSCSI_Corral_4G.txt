@@ -1,0 +1,99 @@
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+iSCSI_Corral_4G  4G           83292  33 49545  14           96279  14  4605 211
+Latency                       50781us     728ms              7943us    7054us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+iSCSI_Corral_4G     -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1  1443  16 +++++ +++  1673  13  1292  29 +++++ +++  1974  16
+Latency              3365us     167us    1379us    5867us      36us    1378us
+1.97,1.97,iSCSI_Corral_4G,1,1514840321,4G,,,,83292,33,49545,14,,,96279,14,4605,211,1,,,,,1443,16,+++++,+++,1673,13,1292,29,+++++,+++,1974,16,,50781us,728ms,,7943us,7054us,3365us,167us,1379us,5867us,36us,1378us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+iSCSI_Corral_4G  4G           83178  30 49093  14           95032  15  4776 194
+Latency                         222ms     608ms              9248us    9821us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+iSCSI_Corral_4G     -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1  1412  16 +++++ +++  1746  13  1821  26 +++++ +++ +++++ +++
+Latency              3396us     164us    2690us    1708us      35us    1059us
+1.97,1.97,iSCSI_Corral_4G,1,1514840557,4G,,,,83178,30,49093,14,,,95032,15,4776,194,1,,,,,1412,16,+++++,+++,1746,13,1821,26,+++++,+++,+++++,+++,,222ms,608ms,,9248us,9821us,3396us,164us,2690us,1708us,35us,1059us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+iSCSI_Corral_4G  4G           83323  28 49529  14           96461  14  4528 220
+Latency                       37225us     621ms              9091us   11320us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+iSCSI_Corral_4G     -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1  1773  17 +++++ +++  1849  14  1433  25 +++++ +++ +++++ +++
+Latency              3952us     193us    1477us    6240us      30us    1178us
+1.97,1.97,iSCSI_Corral_4G,1,1514843875,4G,,,,83323,28,49529,14,,,96461,14,4528,220,1,,,,,1773,17,+++++,+++,1849,14,1433,25,+++++,+++,+++++,+++,,37225us,621ms,,9091us,11320us,3952us,193us,1477us,6240us,30us,1178us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+iSCSI_Corral_4G  4G           82900  31 49489  14           95850  14  4972 197
+Latency                       40202us     637ms              7974us   10438us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+iSCSI_Corral_4G     -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1  1722  17 +++++ +++  1863  13  1676  26 +++++ +++  2001  13
+Latency              4425us     164us    2908us    1625us      41us    1513us
+1.97,1.97,iSCSI_Corral_4G,1,1514844150,4G,,,,82900,31,49489,14,,,95850,14,4972,197,1,,,,,1722,17,+++++,+++,1863,13,1676,26,+++++,+++,2001,13,,40202us,637ms,,7974us,10438us,4425us,164us,2908us,1625us,41us,1513us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+iSCSI_Corral_4G  4G           82942  32 50137  12           95895  14  4662 210
+Latency                       45155us     647ms             10643us   10176us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+iSCSI_Corral_4G     -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1  1833  15 +++++ +++  1859  13  1451  24 +++++ +++  1705  10
+Latency              3495us     166us    1665us    3818us      30us    1626us
+1.97,1.97,iSCSI_Corral_4G,1,1514843384,4G,,,,82942,32,50137,12,,,95895,14,4662,210,1,,,,,1833,15,+++++,+++,1859,13,1451,24,+++++,+++,1705,10,,45155us,647ms,,10643us,10176us,3495us,166us,1665us,3818us,30us,1626us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+iSCSI_Corral_4G  4G           81930  30 49956  13           96684  14  4213 211
+Latency                       47386us     621ms              9443us    9967us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+iSCSI_Corral_4G     -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1  1405  14 +++++ +++  1580  14  1177  32 +++++ +++  1873  12
+Latency              4041us     213us    3136us    1946us      52us    1331us
+1.97,1.97,iSCSI_Corral_4G,1,1514843642,4G,,,,81930,30,49956,13,,,96684,14,4213,211,1,,,,,1405,14,+++++,+++,1580,14,1177,32,+++++,+++,1873,12,,47386us,621ms,,9443us,9967us,4041us,213us,3136us,1946us,52us,1331us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+iSCSI_Corral_4G  4G           82774  32 49796  14           95746  14  4669 207
+Latency                       40177us     619ms              8693us   11895us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+iSCSI_Corral_4G     -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++  1281  29 +++++ +++  1778  14
+Latency              3509us     163us    1358us   11813us      38us    1147us
+1.97,1.97,iSCSI_Corral_4G,1,1514842876,4G,,,,82774,32,49796,14,,,95746,14,4669,207,1,,,,,+++++,+++,+++++,+++,+++++,+++,1281,29,+++++,+++,1778,14,,40177us,619ms,,8693us,11895us,3509us,163us,1358us,11813us,38us,1147us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+iSCSI_Corral_4G  4G           83331  36 49369  15           98000  13  5131 217
+Latency                       41239us     618ms             14832us    9797us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+iSCSI_Corral_4G     -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1  1708  16 +++++ +++  1855  15  1385  28 +++++ +++  1590  13
+Latency              3194us     167us    1276us    1791us      34us    2534us
+1.97,1.97,iSCSI_Corral_4G,1,1514843135,4G,,,,83331,36,49369,15,,,98000,13,5131,217,1,,,,,1708,16,+++++,+++,1855,15,1385,28,+++++,+++,1590,13,,41239us,618ms,,14832us,9797us,3194us,167us,1276us,1791us,34us,2534us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+iSCSI_Corral_4G  4G           82465  29 49517  14           94192  15  4645 192
+Latency                       66346us     613ms              9507us   13122us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+iSCSI_Corral_4G     -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1  1494  18 +++++ +++  1712  16  1304  25 +++++ +++  1947  15
+Latency              4890us     163us    1856us    1847us      30us    1184us
+1.97,1.97,iSCSI_Corral_4G,1,1514842353,4G,,,,82465,29,49517,14,,,94192,15,4645,192,1,,,,,1494,18,+++++,+++,1712,16,1304,25,+++++,+++,1947,15,,66346us,613ms,,9507us,13122us,4890us,163us,1856us,1847us,30us,1184us

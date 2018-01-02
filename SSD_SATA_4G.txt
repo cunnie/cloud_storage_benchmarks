@@ -1,0 +1,99 @@
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+SSD_SATA_4G      4G           407224  98 184009  37           385565  39  9802 279
+Latency                       31402us   95162us              8860us    9749us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+SSD_SATA_4G         -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               468us     137us     968us     679us      40us     478us
+1.97,1.97,SSD_SATA_4G,1,1514909690,4G,,,,407224,98,184009,37,,,385565,39,9802,279,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,31402us,95162us,,8860us,9749us,468us,137us,968us,679us,40us,478us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+SSD_SATA_4G      4G           111156  98 188360  37           336010  38  9499 273
+Latency                         107ms     119ms              8569us    9305us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+SSD_SATA_4G         -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               535us     175us     909us     605us      38us     308us
+1.97,1.97,SSD_SATA_4G,1,1514909557,4G,,,,111156,98,188360,37,,,336010,38,9499,273,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,107ms,119ms,,8569us,9305us,535us,175us,909us,605us,38us,308us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+SSD_SATA_4G      4G           42545  99 199917  37           460561  43  8110 335
+Latency                       21733us     103ms              1683us   12050us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+SSD_SATA_4G         -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               679us     160us    1072us     425us      31us     349us
+1.97,1.97,SSD_SATA_4G,1,1514908919,4G,,,,42545,99,199917,37,,,460561,43,8110,335,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,21733us,103ms,,1683us,12050us,679us,160us,1072us,425us,31us,349us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+SSD_SATA_4G      4G           60497  98 181878  40           422059  44  9696 281
+Latency                       57234us     117ms              8741us    8704us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+SSD_SATA_4G         -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               396us     166us    1004us     539us      46us     258us
+1.97,1.97,SSD_SATA_4G,1,1514909135,4G,,,,60497,98,181878,40,,,422059,44,9696,281,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,57234us,117ms,,8741us,8704us,396us,166us,1004us,539us,46us,258us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+SSD_SATA_4G      4G           107066  97 187207  35           396788  40  9661 272
+Latency                         138ms   98436us              7136us   10221us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+SSD_SATA_4G         -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               447us     167us     935us     703us      28us     251us
+1.97,1.97,SSD_SATA_4G,1,1514908796,4G,,,,107066,97,187207,35,,,396788,40,9661,272,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,138ms,98436us,,7136us,10221us,447us,167us,935us,703us,28us,251us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+SSD_SATA_4G      4G           77643  98 184357  40           363196  41  9592 282
+Latency                       32886us     106ms              7862us   10539us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+SSD_SATA_4G         -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               415us     192us     890us    1965us      40us     932us
+1.97,1.97,SSD_SATA_4G,1,1514908910,4G,,,,77643,98,184357,40,,,363196,41,9592,282,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,32886us,106ms,,7862us,10539us,415us,192us,890us,1965us,40us,932us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+SSD_SATA_4G      4G           45216  99 181578  41           444055  43  8998 311
+Latency                       65179us     111ms              4745us    7104us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+SSD_SATA_4G         -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               930us     244us    1235us     864us      30us     254us
+1.97,1.97,SSD_SATA_4G,1,1514906510,4G,,,,45216,99,181578,41,,,444055,43,8998,311,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,65179us,111ms,,4745us,7104us,930us,244us,1235us,864us,30us,254us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+SSD_SATA_4G      4G           69546  98 189060  42           351040  38  9551 284
+Latency                       27984us     119ms              9085us   12189us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+SSD_SATA_4G         -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               690us     164us     912us     539us      36us     238us
+1.97,1.97,SSD_SATA_4G,1,1514906227,4G,,,,69546,98,189060,42,,,351040,38,9551,284,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,27984us,119ms,,9085us,12189us,690us,164us,912us,539us,36us,238us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+SSD_SATA_4G      4G           118205  97 195282  38           448829  42  9136 335
+Latency                       35033us     109ms              1893us   10243us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+SSD_SATA_4G         -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               576us     164us     963us     824us      38us     283us
+1.97,1.97,SSD_SATA_4G,1,1514906308,4G,,,,118205,97,195282,38,,,448829,42,9136,335,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,35033us,109ms,,1893us,10243us,576us,164us,963us,824us,38us,283us
