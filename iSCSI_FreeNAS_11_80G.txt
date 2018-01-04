@@ -1,0 +1,55 @@
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+iSCSI_FreeNAS_1 80G           112366  10 55558   4           106184   5  4883 107
+Latency                         463ms     717ms               221ms   17041us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+iSCSI_FreeNAS_11_80 -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency              2088us      67us    4980us    3198us      17us    1090us
+1.97,1.97,iSCSI_FreeNAS_11_80G,1,1515077978,80G,,,,112366,10,55558,4,,,106184,5,4883,107,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,463ms,717ms,,221ms,17041us,2088us,67us,4980us,3198us,17us,1090us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+iSCSI_FreeNAS_1 80G           113523  10 55597   4           106677   5  4923 103
+Latency                         264ms     715ms             70214us   11721us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+iSCSI_FreeNAS_11_80 -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency              2351us      69us    4091us    9140us      15us     487us
+1.97,1.97,iSCSI_FreeNAS_11_80G,1,1515082983,80G,,,,113523,10,55597,4,,,106677,5,4923,103,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,264ms,715ms,,70214us,11721us,2351us,69us,4091us,9140us,15us,487us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+iSCSI_FreeNAS_1 80G           113530  10 55519   4           106781   5  5014  97
+Latency                         457ms     766ms             82341us    9339us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+iSCSI_FreeNAS_11_80 -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency              3104us      68us    2339us    4608us      16us     640us
+1.97,1.97,iSCSI_FreeNAS_11_80G,1,1515087905,80G,,,,113530,10,55519,4,,,106781,5,5014,97,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,457ms,766ms,,82341us,9339us,3104us,68us,2339us,4608us,16us,640us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+iSCSI_FreeNAS_1 80G           113632  10 55611   4           106766   5  5072 111
+Latency                       19190us     710ms             77364us    8391us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+iSCSI_FreeNAS_11_80 -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency              2349us      81us    2032us    6804us      17us     566us
+1.97,1.97,iSCSI_FreeNAS_11_80G,1,1515093114,80G,,,,113632,10,55611,4,,,106766,5,5072,111,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,19190us,710ms,,77364us,8391us,2349us,81us,2032us,6804us,17us,566us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+iSCSI_FreeNAS_1 80G           113352  12 55587   4           106702   5  5011 109
+Latency                         418ms     736ms             76014us    9437us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+iSCSI_FreeNAS_11_80 -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency              2400us      77us    2226us    4951us       5us     432us
+1.97,1.97,iSCSI_FreeNAS_11_80G,1,1515090001,80G,,,,113352,12,55587,4,,,106702,5,5011,109,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,418ms,736ms,,76014us,9437us,2400us,77us,2226us,4951us,5us,432us
