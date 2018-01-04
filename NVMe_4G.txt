@@ -1,0 +1,99 @@
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+NVMe_4G          4G           591313  95 340430  72           1007765  86 11809 302
+Latency                       12440us   24117us              5957us    8073us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+NVMe_4G             -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency              1566us     163us     899us     662us      35us     699us
+1.97,1.97,NVMe_4G,1,1514988829,4G,,,,591313,95,340430,72,,,1007765,86,11809,302,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,12440us,24117us,,5957us,8073us,1566us,163us,899us,662us,35us,699us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+NVMe_4G          4G           442023  90 348819  72           950080  84 10062 341
+Latency                        9485us   18897us              1086us    7840us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+NVMe_4G             -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency              1789us     164us     989us     667us      38us     631us
+1.97,1.97,NVMe_4G,1,1514988985,4G,,,,442023,90,348819,72,,,950080,84,10062,341,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,9485us,18897us,,1086us,7840us,1789us,164us,989us,667us,38us,631us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+NVMe_4G          4G           451437  91 359873  68           944058  83 +++++ +++
+Latency                       11285us   23461us              1165us    8511us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+NVMe_4G             -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency              1345us     166us     956us    1574us      40us     546us
+1.97,1.97,NVMe_4G,1,1514988121,4G,,,,451437,91,359873,68,,,944058,83,+++++,+++,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,11285us,23461us,,1165us,8511us,1345us,166us,956us,1574us,40us,546us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+NVMe_4G          4G           506170  90 348717  71           958111  83 11995 369
+Latency                       11617us   20903us               798us   11999us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+NVMe_4G             -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency              1745us     160us     981us     710us      50us     522us
+1.97,1.97,NVMe_4G,1,1514988036,4G,,,,506170,90,348717,71,,,958111,83,11995,369,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,11617us,20903us,,798us,11999us,1745us,160us,981us,710us,50us,522us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+NVMe_4G          4G           478881  91 345143  71           936222  83 10254 329
+Latency                       10308us   25401us              6563us    9890us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+NVMe_4G             -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency              1507us     159us     988us     640us      65us    2300us
+1.97,1.97,NVMe_4G,1,1514988118,4G,,,,478881,91,345143,71,,,936222,83,10254,329,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,10308us,25401us,,6563us,9890us,1507us,159us,988us,640us,65us,2300us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+NVMe_4G          4G           494822  90 340806  70           930796  82 11970 318
+Latency                       12290us   21953us               936us    9569us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+NVMe_4G             -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency              1178us     215us     947us     975us      46us     938us
+1.97,1.97,NVMe_4G,1,1514988454,4G,,,,494822,90,340806,70,,,930796,82,11970,318,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,12290us,21953us,,936us,9569us,1178us,215us,947us,975us,46us,938us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+NVMe_4G          4G           545099  93 360868  69           933678  84 10252 289
+Latency                       11593us   17475us              4245us   11706us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+NVMe_4G             -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency              1790us     169us     977us     810us      56us     865us
+1.97,1.97,NVMe_4G,1,1514988308,4G,,,,545099,93,360868,69,,,933678,84,10252,289,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,11593us,17475us,,4245us,11706us,1790us,169us,977us,810us,56us,865us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+NVMe_4G          4G           535874  93 346426  71           930816  82 11304 336
+Latency                       14144us   27236us              9539us    9117us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+NVMe_4G             -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency              3052us     188us    1212us    1214us      65us     939us
+1.97,1.97,NVMe_4G,1,1514988354,4G,,,,535874,93,346426,71,,,930816,82,11304,336,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,14144us,27236us,,9539us,9117us,3052us,188us,1212us,1214us,65us,939us
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+NVMe_4G          4G           544048  93 344194  70           986464  86 11810 274
+Latency                       10840us   22882us               689us    8739us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+NVMe_4G             -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency              2076us     164us     968us    1070us      23us    1239us
+1.97,1.97,NVMe_4G,1,1514987757,4G,,,,544048,93,344194,70,,,986464,86,11810,274,1,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,,10840us,22882us,,689us,8739us,2076us,164us,968us,1070us,23us,1239us
