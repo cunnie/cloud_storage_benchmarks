@@ -1,0 +1,9 @@
+for I in $(seq 0 8); do bonnie++ -m "iSCSI_Corral_4G" -r 2048 -s 4096 -d /mnt/bonnie -f -b -n 1 >> ~/iSCSI_Corral_4G.txt; sleep 60; done
+for I in $(seq 0 8); do bonnie++ -m "iSCSI_Corral_80G" -r 8192 -s 81920 -d /mnt/bonnie -f -b -n 1 >> ~/iSCSI_Corral_80G.txt; sleep 60; done
+for I in $(seq 0 8); do bonnie++ -m "SSD_SATA_4G" -r 2048 -s 4096 -d /mnt/bonnie -f -b -n 1 >> ~/SSD_SATA_4G.txt; sleep 60; done
+for I in $(seq 0 8); do bonnie++ -m "SSD_SATA_80G" -r 8192 -s 81920 -d /mnt/bonnie -f -b -n 1 >> ~/SSD_SATA_80G.txt; sleep 60; done
+for I in $(seq 0 8); do bonnie++ -m "NVMe_4G" -r 2048 -s 4096 -d /mnt/bonnie -f -b -n 1 >> ~/NVMe_4G.txt; sleep 60; done
+for I in $(seq 0 8); do bonnie++ -m "NVMe_80G" -r 8192 -s 81920 -d /mnt/bonnie -f -b -n 1 >> ~/NVMe_80G.txt; sleep 60; done
+for I in $(seq 0 8); do bonnie++ -m "iSCSI_FreeNAS_11_4G" -r 2048 -s 4096 -d /mnt/bonnie -f -b -n 1 >> ~/iSCSI_FreeNAS_11_4G.txt; sleep 60; done
+for I in $(seq 0 8); do bonnie++ -m "iSCSI_FreeNAS_11_80G" -r 8192 -s 81920 -d /mnt/bonnie -f -b -n 1 >> ~/iSCSI_FreeNAS_11_80G.txt; sleep 60; done
+for I in $(seq 0 8); do bonnie++ -m "NVMe_80G_meltdown" -r 8192 -s 81920 -d /mnt/bonnie -f -b -n 1 >> ~/NVMe_80G_meltdown.txt; sleep 60; done
