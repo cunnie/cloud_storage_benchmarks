@@ -1,7 +1,11 @@
 Various Benchmarks using `bonnie++`
 
-To figure out the average
+To create a .csv file containing the benchmarks:
 
 ```
-grep '^[0-9.]' NVMe_80G.txt | awk -F, -f stats.awk
+echo ",\"IOPS\",\"Read\",\"Write\"" > /tmp/junk.csv
+for file in *80G.txt; do
+  echo -n "\"$file\"," >> /tmp/junk.csv
+  grep '^[0-9.]' $file  | awk -F, -f stats.awk >> /tmp/junk.csv
+done
 ```
