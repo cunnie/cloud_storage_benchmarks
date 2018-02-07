@@ -1,0 +1,12 @@
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+aws_m4.large_gp 16G   750  99 55019   4 40337   4  1663  99 71187   3 10883  85
+Latency             12470us     136ms     506ms    6146us     139ms    3573us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+aws_m4.large_gp2    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               468us     290us    1205us     686us      17us    1061us
+1.97,1.97,aws_m4.large_gp2,1,1517949171,16G,,750,99,55019,4,40337,4,1663,99,71187,3,10883,85,16,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,12470us,136ms,506ms,6146us,139ms,3573us,468us,290us,1205us,686us,17us,1061us
+

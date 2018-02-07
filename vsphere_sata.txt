@@ -1,0 +1,12 @@
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+vsphere_sata    16G   545  99 404894  28 185112  18   843  99 525610  24 14570 110
+Latency             16972us     355ms    2211ms   11180us    7937us    3072us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+vsphere_sata        -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               349us     464us     360us     164us      26us     201us
+1.97,1.97,vsphere_sata,1,1517930898,16G,,545,99,404894,28,185112,18,843,99,525610,24,14570,110,16,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,16972us,355ms,2211ms,11180us,7937us,3072us,349us,464us,360us,164us,26us,201us
+
