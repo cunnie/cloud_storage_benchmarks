@@ -1,0 +1,12 @@
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+gce_pd-ssd      15G   736  99 26293   3 24577   2  1656  99 34696   3  9677 141
+Latency             15706us     332ms    1814ms    6118us   31607us    5473us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+gce_pd-ssd          -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               735us     503us    1116us     373us      30us    1537us
+1.97,1.97,gce_pd-ssd,1,1518013224,15G,,736,99,26293,3,24577,2,1656,99,34696,3,9677,141,16,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,15706us,332ms,1814ms,6118us,31607us,5473us,735us,503us,1116us,373us,30us,1537us
+
