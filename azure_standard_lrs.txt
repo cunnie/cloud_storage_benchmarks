@@ -1,0 +1,12 @@
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+gce_standard_lr 16G   421  99 101322  12 39411   6   695  99 80327   7 840.3  15
+Latency             25956us     732ms    1679ms   28526us   73134us     122ms
+Version  1.97       ------Sequential Create------ --------Random Create--------
+gce_standard_lrs    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16 +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++ +++++ +++
+Latency               754us     440us     673us     430us     318us    1798us
+1.97,1.97,gce_standard_lrs,1,1518052219,16G,,421,99,101322,12,39411,6,695,99,80327,7,840.3,15,16,,,,,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,25956us,732ms,1679ms,28526us,73134us,122ms,754us,440us,673us,430us,318us,1798us
+
