@@ -1,0 +1,15 @@
+# bonnie++ ZFS Results for RAIDZ2 on FreeNAS 11
+#
+# bonnie++ -u nobody -m "RAIDZ2_FreeNAS_11" -r 8192 -s 65536 -d /mnt/tank/tmp/ -f -b -n 1 > /mnt/tank/tmp/bonnie.txt
+#
+Version  1.97       ------Sequential Output------ --Sequential Input- --Random-
+Concurrency   1     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+RAIDZ2_FreeNAS_ 64G           323909  93 233544  95           662164  99  5134 279
+Latency                       30609us   50234us               144ms   23105us
+Version  1.97       ------Sequential Create------ --------Random Create--------
+RAIDZ2_FreeNAS_11   -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                  1   215   3 +++++ +++   168   2   215   2 +++++ +++   215   3
+Latency              7952us     763us    1316ms    8063us     633us    7344us
+1.97,1.97,RAIDZ2_FreeNAS_11,1,1518887896,64G,,,,323909,93,233544,95,,,662164,99,5134,279,1,,,,,215,3,+++++,+++,168,2,215,2,+++++,+++,215,3,,30609us,50234us,,144ms,23105us,7952us,763us,1316ms,8063us,633us,7344us
