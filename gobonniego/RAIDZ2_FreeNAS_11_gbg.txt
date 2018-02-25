@@ -1,0 +1,15 @@
+2018/02/24 21:17:39 gobonniego starting. version: 1.0.4, threads: 8, disk space to use (MiB): 65430
+2018/02/24 21:17:39 Number of CPU cores: 8
+2018/02/24 21:17:39 Total system RAM (MiB): 32715
+2018/02/24 21:17:39 Bonnie working directory: /mnt/tank
+2018/02/24 21:23:24 Written (MiB): 65430
+2018/02/24 21:23:24 Written (MB): 68608.327680
+2018/02/24 21:23:24 Duration (seconds): 344.344152
+Sequential Write MB/s: 199.24
+2018/02/24 21:27:40 Read (MiB): 65430
+2018/02/24 21:27:40 Read (MB): 68608.327680
+2018/02/24 21:27:40 Duration (seconds): 256.143012
+Sequential Read MB/s: 267.85
+2018/02/24 21:27:55 operations 6783
+2018/02/24 21:27:55 Duration (seconds): 15.064093
+IOPS: 450
