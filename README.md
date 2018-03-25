@@ -5,6 +5,7 @@ To copy the GoBonnieGo metrics into a spreadsheet for further consumption:
 ```
 cd GoBonnieGo-1.0.7
 for METRIC in iops read_megabytes_per_second write_megabytes_per_second; do
+  touch /tmp/$METRIC.csv
   for FILE in \
     aws_gp2.json \
     aws_io1.json \
@@ -17,11 +18,10 @@ for METRIC in iops read_megabytes_per_second write_megabytes_per_second; do
     gce_pd-standard.json \
     vsphere_freenas.json
   do
-    echo $FILE
-    jq -r .results[].$METRIC < $FILE | pbcopy
-    read A
+    ( echo $FILE; jq -r .results[].$METRIC < $FILE ) |
+      paste /tmp/$METRIC.csv - > /tmp/$METRIC.$$.csv
+    mv -f /tmp/$METRIC.$$.csv /tmp/$METRIC.csv
   done
-  read B
 done
 ```
 
