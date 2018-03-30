@@ -3,9 +3,9 @@ Various Benchmarks using GoBonnieGo and bonnie++.
 To copy the GoBonnieGo metrics into a spreadsheet for further consumption:
 
 ```
-cd GoBonnieGo-1.0.7
+pushd GoBonnieGo-1.0.7
 for METRIC in iops read_megabytes_per_second write_megabytes_per_second; do
-  touch /tmp/$METRIC.csv
+  > /tmp/$METRIC.csv
   for FILE in \
     aws_gp2.json \
     aws_io1.json \
@@ -23,18 +23,63 @@ for METRIC in iops read_megabytes_per_second write_megabytes_per_second; do
     mv -f /tmp/$METRIC.$$.csv /tmp/$METRIC.csv
   done
 done
+popd
 ```
-
-Note that we don't choose _all_ the metrics — we don't want to overwhelm the
-reader with too much information; instead, we want to select the metrics that
-are particularly significant.
-
-To create a .csv file containing the benchmarks:
-
+To create an-AWS specific metrics into a spreadsheet.
 ```
-echo ",\"IOPS\",\"Read\",\"Write\"" > /tmp/junk.csv
-for file in *80G.txt; do
-  echo -n "\"$file\"," >> /tmp/junk.csv
-  grep '^[0-9.]' $file  | awk -F, -f stats.awk >> /tmp/junk.csv
+pushd GoBonnieGo-1.0.7
+IAAS=aws
+> /tmp/$IAAS.csv
+for METRIC in iops read_megabytes_per_second write_megabytes_per_second; do
+  for FILE in \
+    aws_standard.json \
+    aws_standard-256.json \
+    aws_gp2.json \
+    aws_gp2-256.json \
+    aws_io1.json
+  do
+    ( echo $METRIC; echo $FILE; jq -r .results[].$METRIC < $FILE ) |
+      paste /tmp/$IAAS.csv - > /tmp/$IAAS.$$.csv
+    mv -f /tmp/$IAAS.$$.csv /tmp/$IAAS.csv
+  done
 done
+popd
+```
+Azure metrics:
+```
+pushd GoBonnieGo-1.0.7
+IAAS=azure
+> /tmp/$IAAS.csv
+for METRIC in iops read_megabytes_per_second write_megabytes_per_second; do
+  for FILE in \
+    azure_standard_lrs.json \
+    azure_standard_lrs-rw.json \
+    azure_standard_lrs-256.json \
+    azure_premium_lrs.json \
+    azure_premium_lrs-256.json \
+    azure_premium_lrs-256-rw.json
+  do
+    ( echo $METRIC; echo $FILE; jq -r .results[].$METRIC < $FILE ) |
+      paste /tmp/$IAAS.csv - > /tmp/$IAAS.$$.csv
+    mv -f /tmp/$IAAS.$$.csv /tmp/$IAAS.csv
+  done
+done
+popd
+```
+Google metrics:
+```
+pushd GoBonnieGo-1.0.7
+IAAS=google
+> /tmp/$IAAS.csv
+for METRIC in iops read_megabytes_per_second write_megabytes_per_second; do
+  for FILE in \
+    gce_pd-standard.json \
+    gce_pd-standard-2.json
+  do
+    ( echo $METRIC; echo $FILE; jq -r .results[].$METRIC < $FILE ) |
+      paste /tmp/$IAAS.csv - > /tmp/$IAAS.$$.csv
+    mv -f /tmp/$IAAS.$$.csv /tmp/$IAAS.csv
+  done
+done
+popd
 ```
