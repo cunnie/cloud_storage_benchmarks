@@ -1,4 +1,35 @@
-Various Benchmarks using GoBonnieGo and bonnie++.
+## Cloud Storage Benchmarks
+
+This repo contains benchmarks of Infrastructure as a Service (Iaas) disk
+storage systems (e.g. AWS's gp2 & io1, Azure's Standard & Premium storage).
+This repo does _not_ contain benchmarks of non-disk storage system (e.g. no
+benchmarks for Amazon S3 (Simple Cloud Storage Service)).
+
+The benchmarks are catalogued by the benchmarking software, e.g. the newest
+benchmarks are stored in the `gobonniego-1.0.7/` directory, benchmarks created
+by the [GoBonnieGo](https://github.com/cunnie/gobonniego) filesystem
+benchmarking app version 1.0.7.
+
+The GoBonnieGo results are in JSON, one terribly-long line of JSON. Users may
+find it convenient to use a JSON utility such as
+[`jq`](https://stedolan.github.io/jq/) to parse the results.
+
+In the following example, we use `jq` to output the IOPS of the ten runs
+of GoBonnieGo's benchmark on the Google SSD 256 GiB disk:
+
+```
+jq -r .results[].iops < gobonniego-1.0.7/gce_pd-ssd-256.json
+  11879.799945702642
+  12059.695074934767
+  11870.419814458231
+  ...
+```
+
+The other two metrics, read throughput and write throughput, can be emitted by
+substituting the word `iops` in the command above with the words
+`read_megabytes_per_second` and `write_megabytes_per_second`, respectively.
+
+## Developer Notes
 
 To copy the GoBonnieGo metrics into a spreadsheet for further consumption:
 
