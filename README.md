@@ -97,7 +97,7 @@ for METRIC in iops read_megabytes_per_second write_megabytes_per_second; do
 done
 popd
 ```
-Google metrics:
+Google throttle metrics:
 ```
 pushd GoBonnieGo-1.0.7
 IAAS=google
@@ -107,6 +107,20 @@ for METRIC in iops read_megabytes_per_second write_megabytes_per_second; do
     gce_pd-standard.json \
     gce_pd-standard-2.json
   do
+    ( echo $METRIC; echo $FILE; jq -r .results[].$METRIC < $FILE ) |
+      paste /tmp/$IAAS.csv - > /tmp/$IAAS.$$.csv
+    mv -f /tmp/$IAAS.$$.csv /tmp/$IAAS.csv
+  done
+done
+popd
+```
+AWS throttle metrics:
+```
+pushd GoBonnieGo-1.0.7
+IAAS=aws
+> /tmp/$IAAS.csv
+for METRIC in iops read_megabytes_per_second write_megabytes_per_second; do
+  for FILE in aws_gp2-lr-0{0,1}.json; do
     ( echo $METRIC; echo $FILE; jq -r .results[].$METRIC < $FILE ) |
       paste /tmp/$IAAS.csv - > /tmp/$IAAS.$$.csv
     mv -f /tmp/$IAAS.$$.csv /tmp/$IAAS.csv
