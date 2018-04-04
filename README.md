@@ -1,21 +1,26 @@
 ## Cloud Storage Benchmarks
 
-This repo contains benchmarks of Infrastructure as a Service (Iaas) disk
-storage systems (e.g. AWS's gp2 & io1, Azure's Standard & Premium storage).
-This repo does _not_ contain benchmarks of non-disk storage system (e.g. no
-benchmarks for Amazon S3 (Simple Cloud Storage Service)).
+This repo contains benchmarks of Infrastructure as a Service (Iaas) disk storage
+systems (e.g. AWS's gp2 & io1, Azure's Standard & Premium storage). This repo
+does _not_ contain benchmarks of non-disk storage system (e.g. no benchmarks for
+Amazon S3 (Simple Cloud Storage Service)).
 
 The benchmarks are catalogued by the benchmarking software, e.g. the newest
 benchmarks are stored in the `gobonniego-1.0.7/` directory, benchmarks created
 by the [GoBonnieGo](https://github.com/cunnie/gobonniego) filesystem
 benchmarking app version 1.0.7.
 
+This repo contains the raw benchmark data. For an interpretation of the data,
+please refer to *[Benchmarking the Disk Speed of
+IaaSes](http://engineering.pivotal.io/post/gobonniego_results/)* in the Pivotal
+Engineering Journal.
+
 The GoBonnieGo results are in JSON, one terribly-long line of JSON. Users may
 find it convenient to use a JSON utility such as
 [`jq`](https://stedolan.github.io/jq/) to parse the results.
 
-In the following example, we use `jq` to output the IOPS of the ten runs
-of GoBonnieGo's benchmark on the Google SSD 256 GiB disk:
+In the following example, we use `jq` to output the IOPS of the ten runs of
+GoBonnieGo's benchmark on the Google SSD 256 GiB disk:
 
 ```
 jq -r .results[].iops < gobonniego-1.0.7/gce_pd-ssd-256.json
