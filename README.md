@@ -128,3 +128,21 @@ for METRIC in iops read_megabytes_per_second write_megabytes_per_second; do
 done
 popd
 ```
+vSphere metrics:
+```
+pushd GoBonnieGo-1.0.7
+IAAS=vsphere
+> /tmp/$IAAS.csv
+for METRIC in iops read_megabytes_per_second write_megabytes_per_second; do
+  for FILE in \
+    vsphere_nvme.json \
+    vsphere_sata.json \
+    gce_pd-ssd-256.json
+  do
+    ( echo $METRIC; echo $FILE; jq -r .results[].$METRIC < $FILE ) |
+      paste /tmp/$IAAS.csv - > /tmp/$IAAS.$$.csv
+    mv -f /tmp/$IAAS.$$.csv /tmp/$IAAS.csv
+  done
+done
+popd
+```
