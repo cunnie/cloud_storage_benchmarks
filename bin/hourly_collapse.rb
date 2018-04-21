@@ -29,7 +29,7 @@ ARGF.each do |line|
     metrics=[]
     limit += 3600
     while seconds >= limit
-      print "\n"
+      print "\t\n"
       limit += 3600
     end
     metrics=[metric]
