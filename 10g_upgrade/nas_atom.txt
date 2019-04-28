@@ -1,0 +1,4 @@
+OS Version: FreeNAS-11.2-U3 (Build Date: Mar 27, 2019 18:24)
+Processor: Intel(R) Atom(TM) CPU C2750 @ 2.41GHz (8 cores)
+Memory: 32 GiB
+HostName: nas.nono.io
