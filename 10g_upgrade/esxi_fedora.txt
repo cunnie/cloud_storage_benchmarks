@@ -1,0 +1,5 @@
+sudo ./gobonniego -dir /tmp/ -json -seconds 14400 -v -iops-duration 60 > 10g_sudo_no_l2arc_no_slog.json
+2019/04/29 06:21:55 gobonniego starting. version: 1.0.9, runs: 1, seconds: 14400, threads: 8, disk space to use (MiB): 15946
+2019/04/29 06:21:55 Number of CPU cores: 8
+2019/04/29 06:21:55 Total system RAM (MiB): 7973
+2019/04/29 06:21:55 Bonnie working directory: /tmp/

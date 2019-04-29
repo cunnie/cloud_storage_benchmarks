@@ -1,0 +1,4 @@
+FreeNAS-11.2-U3 (Build Date: Mar 27, 2019 18:24)
+Processor: Intel(R) Xeon(R) CPU D-1537 @ 1.70GHz (16 cores)
+Memory: 128 GiB
+HostName: nas.nono.io
