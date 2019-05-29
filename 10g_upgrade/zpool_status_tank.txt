@@ -1,0 +1,17 @@
+  pool: tank
+ state: ONLINE
+  scan: scrub repaired 0 in 0 days 04:27:18 with 0 errors on Sun Apr 28 04:27:20 2019
+config:
+
+	NAME                                            STATE     READ WRITE CKSUM
+	tank                                            ONLINE       0     0     0
+	  raidz2-0                                      ONLINE       0     0     0
+	    gptid/f7998949-7c4c-11e5-9c1e-002590f5182a  ONLINE       0     0     0
+	    gptid/793594b6-4ca5-11e4-b3bd-002590f5182a  ONLINE       0     0     0
+	    gptid/79aa5ac5-4ca5-11e4-b3bd-002590f5182a  ONLINE       0     0     0
+	    da2p2                                       ONLINE       0     0     0
+	    gptid/7a96a5d5-4ca5-11e4-b3bd-002590f5182a  ONLINE       0     0     0
+	    gptid/7b04562f-4ca5-11e4-b3bd-002590f5182a  ONLINE       0     0     0
+	    gptid/7b72feca-4ca5-11e4-b3bd-002590f5182a  ONLINE       0     0     0
+
+errors: No known data errors

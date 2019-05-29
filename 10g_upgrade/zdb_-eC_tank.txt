@@ -1,0 +1,93 @@
+MOS Configuration:
+        version: 5000
+        name: 'tank'
+        state: 0
+        txg: 29703521
+        pool_guid: 15857747612514756939
+        hostid: 2476501570
+        hostname: 'nas.nono.io'
+        com.delphix:has_per_vdev_zaps
+        vdev_children: 1
+        vdev_tree:
+            type: 'root'
+            id: 0
+            guid: 15857747612514756939
+            children[0]:
+                type: 'raidz'
+                id: 0
+                guid: 18126679252873199884
+                nparity: 2
+                metaslab_array: 35
+                metaslab_shift: 38
+                ashift: 12
+                asize: 27990443163648
+                is_log: 0
+                create_txg: 4
+                com.delphix:vdev_zap_top: 486
+                children[0]:
+                    type: 'disk'
+                    id: 0
+                    guid: 20123879380603384
+                    path: '/dev/gptid/f7998949-7c4c-11e5-9c1e-002590f5182a'
+                    whole_disk: 1
+                    DTL: 546
+                    create_txg: 4
+                    com.delphix:vdev_zap_leaf: 487
+                children[1]:
+                    type: 'disk'
+                    id: 1
+                    guid: 18060188757733610509
+                    path: '/dev/gptid/793594b6-4ca5-11e4-b3bd-002590f5182a'
+                    whole_disk: 1
+                    DTL: 545
+                    create_txg: 4
+                    com.delphix:vdev_zap_leaf: 488
+                children[2]:
+                    type: 'disk'
+                    id: 2
+                    guid: 17360624840137273382
+                    path: '/dev/gptid/79aa5ac5-4ca5-11e4-b3bd-002590f5182a'
+                    whole_disk: 1
+                    DTL: 544
+                    create_txg: 4
+                    com.delphix:vdev_zap_leaf: 489
+                children[3]:
+                    type: 'disk'
+                    id: 3
+                    guid: 3915079295697476477
+                    path: '/dev/da2p2'
+                    whole_disk: 1
+                    DTL: 543
+                    create_txg: 4
+                    com.delphix:vdev_zap_leaf: 490
+                children[4]:
+                    type: 'disk'
+                    id: 4
+                    guid: 6149660517089161209
+                    path: '/dev/gptid/7a96a5d5-4ca5-11e4-b3bd-002590f5182a'
+                    whole_disk: 1
+                    DTL: 542
+                    create_txg: 4
+                    com.delphix:vdev_zap_leaf: 491
+                children[5]:
+                    type: 'disk'
+                    id: 5
+                    guid: 3409783924093461243
+                    path: '/dev/gptid/7b04562f-4ca5-11e4-b3bd-002590f5182a'
+                    whole_disk: 1
+                    DTL: 540
+                    create_txg: 4
+                    com.delphix:vdev_zap_leaf: 492
+                children[6]:
+                    type: 'disk'
+                    id: 6
+                    guid: 13488632945164245951
+                    path: '/dev/gptid/7b72feca-4ca5-11e4-b3bd-002590f5182a'
+                    whole_disk: 1
+                    DTL: 539
+                    create_txg: 4
+                    com.delphix:vdev_zap_leaf: 493
+        features_for_read:
+            com.delphix:hole_birth
+            com.delphix:embedded_data
+space map refcount mismatch: expected 241 != actual 108

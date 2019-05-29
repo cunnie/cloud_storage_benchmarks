@@ -1,0 +1,36 @@
+NAME          PROPERTY                      VALUE                         SOURCE
+tank/vSphere  type                          volume                        -
+tank/vSphere  creation                      Wed Jan  3 12:58 2018         -
+tank/vSphere  used                          6.00T                         -
+tank/vSphere  available                     11.2T                         -
+tank/vSphere  referenced                    339G                          -
+tank/vSphere  compressratio                 1.55x                         -
+tank/vSphere  reservation                   none                          default
+tank/vSphere  volsize                       5.96T                         local
+tank/vSphere  volblocksize                  32K                           -
+tank/vSphere  checksum                      on                            default
+tank/vSphere  compression                   lz4                           local
+tank/vSphere  readonly                      off                           default
+tank/vSphere  copies                        1                             default
+tank/vSphere  refreservation                6.00T                         local
+tank/vSphere  primarycache                  all                           default
+tank/vSphere  secondarycache                all                           default
+tank/vSphere  usedbysnapshots               0                             -
+tank/vSphere  usedbydataset                 339G                          -
+tank/vSphere  usedbychildren                0                             -
+tank/vSphere  usedbyrefreservation          5.67T                         -
+tank/vSphere  logbias                       latency                       default
+tank/vSphere  dedup                         off                           default
+tank/vSphere  mlslabel                                                    -
+tank/vSphere  sync                          standard                      default
+tank/vSphere  refcompressratio              1.55x                         -
+tank/vSphere  written                       339G                          -
+tank/vSphere  logicalused                   456G                          -
+tank/vSphere  logicalreferenced             456G                          -
+tank/vSphere  volmode                       default                       default
+tank/vSphere  snapshot_limit                none                          default
+tank/vSphere  snapshot_count                none                          default
+tank/vSphere  redundant_metadata            all                           default
+tank/vSphere  org.freenas:description       vSphere datastore via iSCSI   local
+tank/vSphere  org.freebsd.ioc:active        yes                           inherited from tank
+tank/vSphere  org.freenas:permissions_type  PERM                          inherited from tank
